@@ -99,12 +99,11 @@ h1 {
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
-    transition: font-size .5s, color .5s;
+    transition: color .5s;
 }
 
 .nav-list li a:hover {
     color: #FAFAFA;
-    font-size: 16px;
 }
 
 .first-item {
@@ -323,6 +322,10 @@ h3 {
     background: #FDDCC4;
     border: 2px solid #FDDCC4;
     cursor: pointer;
+}
+
+.friend-card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .learn-pet:hover {
