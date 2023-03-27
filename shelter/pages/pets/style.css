@@ -153,6 +153,7 @@ h1 {
     background: #FAFAFA;
     width: 270px;
     height: 435px;
+    transition: box-shadow 0.5s;
 }
 
 h3 {
@@ -183,7 +184,7 @@ h3 {
     letter-spacing: 0.06em;
     background: #FAFAFA;
     color: #292929;
-    transition: background-color 0.5s box-shadow 0.5s;
+    transition: background-color 0.5s;
 }
 
 .friend-card:hover {
@@ -207,6 +208,7 @@ h3 {
     justify-content: space-between;
     width: 340px;
     height: 52px;
+    transition: background-color 0.5s;
 }
 
 .to-left,
@@ -216,6 +218,7 @@ h3 {
     height: 52px;
     border: 2px solid;
     border-radius: 100px;
+    transition: background-color 0.5s;
 }
 
 .to-left {
@@ -235,7 +238,7 @@ h3 {
 .this-page:hover,
 .to-right:hover {
     cursor: pointer;
-    background: #F1CDB3;
+    background-color: #F1CDB3;
 }
 
 .wrapper-footer {
