@@ -285,6 +285,7 @@ h1 {
 
 .friend-card {
     background: #FAFAFA;
+    transition: box-shadow 0.5s;
 }
 
 h3 {
