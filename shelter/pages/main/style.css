@@ -555,4 +555,9 @@ h4 {
     letter-spacing: 0.06em;
     color: #F1CDB3;
     vertical-align: middle;
+    transition: color 0.5s;
+}
+
+.contact-item:hover .item-text {
+    color: #FFFFFF;
 }
