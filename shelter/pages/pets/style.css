@@ -50,6 +50,7 @@ body {
 .header-left {
     width: 184px;
     height: 60px;
+    cursor: pointer;
 }
 
 h1 {
