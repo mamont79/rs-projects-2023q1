@@ -50,6 +50,7 @@ body {
 .header-left {
     width: 184px;
     height: 60px;
+    cursor: pointer;
 }
 
 h1 {
@@ -111,6 +112,12 @@ h1 {
     text-decoration: underline #F1CDB3;
     text-decoration-thickness: 3px;
     text-underline-offset: 5px;
+    transition: color 0.5s text-decoration-thickness 0.5;
+}
+
+.first-item:hover {
+    color: #FFFFFF;
+    text-decoration-thickness: 1px;
 }
 
 .not-only {
@@ -454,6 +461,9 @@ h4 {
 }
 
 .button-card {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
     width: 349px;
     height: 43px;
     background: #F1CDB3;
@@ -472,7 +482,7 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 10px;
+    margin: 10px 15px;
     width: 320px;
     height: 23px;
     font-family: 'Georgia';
