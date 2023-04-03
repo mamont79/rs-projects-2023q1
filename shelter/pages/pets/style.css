@@ -120,6 +120,35 @@
         color: #000000;
     }
     
+    .menu-btn {
+        display: none;
+        margin-top: 18px;
+        width: 30px;
+        height: 25px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+    
+    .menu-btn span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000000;
+        transition: all 0.5s;
+    }
+    
+    .menu-btn span:nth-of-type(2) {
+        top: calc(50% - 9px);
+    }
+    
+    .menu-btn span:nth-of-type(3) {
+        top: calc(50% + 9px);
+    }
+    
     .friends-box {
         background-color: #F6F6F6;
         height: 1262px;
@@ -313,4 +342,186 @@
     
     .contact-item:hover .item-text {
         color: #FFFFFF;
+    }
+    
+    @media screen and (max-width: 1199px) {
+        .wrapper-header {
+            height: 120px;
+        }
+        .box {
+            margin: 0;
+            width: calc(100% - 60px);
+            height: 120px;
+        }
+        .header {
+            max-width: 100%;
+            padding: 30px;
+        }
+        .friends-box {
+            margin: 0;
+            width: 100%;
+            height: 1653px;
+        }
+        .friends-title {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .our-friends {
+            width: calc(100% - 188px);
+            height: 1603px;
+        }
+        .friends-list {
+            width: 100%;
+            height: 1365px;
+        }
+        .friends-cards {
+            width: 100%;
+            height: 1365px;
+            margin-bottom: 40px;
+        }
+        .scarlett,
+        .freddie {
+            display: none;
+        }
+        .wrapper-footer {
+            padding-top: 30px;
+            width: 100%;
+            height: 609px;
+        }
+        .footer {
+            width: calc(100% - 128px);
+            height: 609px;
+            margin: 0 auto;
+        }
+        .footer-contacts,
+        .footer-adress {
+            margin-top: 0;
+        }
+        .contact-items {
+            height: 46px;
+            vertical-align: middle;
+        }
+        .contact-mail {
+            margin: 7px 0;
+        }
+        .item-text {
+            margin: 0;
+        }
+        .puppy-footer {
+            width: 300ppx;
+            height: 310px;
+            margin: auto auto 0;
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        .nav-box {
+            display: none;
+        }
+        .wrapper-header {
+            height: 120px;
+        }
+        .box {
+            margin: 0;
+            width: calc(100% - 20px);
+            height: 120px;
+        }
+        .header {
+            max-width: calc(100% - 10px);
+            padding: 30px 0 30px 10px;
+        }
+        .header-left {
+            width: 184px;
+            margin-left: 10px;
+        }
+        h1 {
+            letter-spacing: 0.05em;
+        }
+        .header-text {
+            letter-spacing: 0.1em;
+        }
+        .menu-btn {
+            display: block;
+        }
+        .friends-box {
+            margin: 0;
+            width: 100%;
+            padding-top: 42px;
+            height: 1607px;
+        }
+        .friends-title {
+            width: 100%;
+            height: 64px;
+            margin-top: 0;
+            margin-bottom: 42px;
+            font-size: 25px;
+            line-height: 130%;
+            text-align: center;
+            letter-spacing: 0.06em;
+        }
+        .our-friends {
+            width: calc(100% - 20px);
+            height: 1607px;
+        }
+        .friends-list {
+            width: 100%;
+            margin: 0 auto;
+            height: 1365px;
+            justify-content: center;
+        }
+        .friends-cards {
+            width: calc(100% - 30px);
+            height: 1365px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        .sophia,
+        .timmy,
+        .charly,
+        .scarlett,
+        .freddie {
+            display: none;
+        }
+        .friends-controls {
+            margin-top: 42px;
+            width: 100%;
+        }
+        .wrapper-footer {
+            padding-top: 30px;
+            width: 100%;
+            height: 779px;
+        }
+        .footer {
+            width: calc(100% - 20px);
+            height: 779px;
+            margin: 0 auto;
+        }
+        .footer h2 {
+            width: 270px;
+            height: 64px;
+            font-size: 25px;
+            text-align: center;
+            letter-spacing: 0.06em;
+            margin: 0 auto;
+        }
+        .footer-contacts,
+        .footer-adress {
+            width: 100%;
+            height: 208px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .contact-items {
+            height: auto;
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+        .item-text {
+            margin: 0;
+        }
+        .puppy-footer {
+            width: 260px;
+            height: 269px;
+            margin: auto auto 0;
+        }
     }
