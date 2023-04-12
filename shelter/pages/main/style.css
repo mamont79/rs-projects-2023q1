@@ -1171,6 +1171,11 @@ h4 {
     height: 52px;
     right: -40px;
     top: -50px;
+    border-radius: 50%;
+}
+
+.popup-close:hover {
+    background: rgb(241, 133, 51);
 }
 
 .popup-container {
