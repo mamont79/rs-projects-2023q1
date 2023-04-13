@@ -347,7 +347,6 @@ h1 {
 .friends-cards {
     position: relative;
     display: flex;
-    justify-content: space-between;
     width: 990px;
     height: 435px;
 }
@@ -737,6 +736,7 @@ h4 {
         width: 100%;
     }
     .friends-cards {
+        margin: 0 auto;
         width: 100%;
     }
     .friends-wrapper {
@@ -745,9 +745,11 @@ h4 {
         overflow: hidden;
     }
     .slide-one,
-    .slide-two,
-    .slide-three {
+    .slide-two {
         margin-right: 40px;
+    }
+    .slide-three {
+        display: none;
     }
     .friend-card {
         margin-right: 0;
@@ -998,6 +1000,12 @@ h4 {
         width: 100%;
         margin-top: 42px;
     }
+    .slide-one {
+        margin: 0 auto;
+    }
+    .slide-two {
+        display: none;
+    }
     .friends-cards {
         width: 100%;
     }
@@ -1171,6 +1179,11 @@ h4 {
     height: 52px;
     right: -40px;
     top: -50px;
+    border-radius: 50%;
+}
+
+.popup-close:hover {
+    background: rgb(241, 133, 51);
 }
 
 .popup-container {
