@@ -124,10 +124,17 @@ const pets = [{
 
 ]
 
-
-const friendPopup = document.querySelector('.friend-card');
+const friendPopup = document.querySelectorAll('.friend-card');
 const popup = document.querySelector('.popup');
 const popupCard = document.querySelector('.popup-body')
+
+
+let cardName;
+
+
+//let title = friendPopup[2].childNodes[3].textContent.trim();
+
+
 
 popup.addEventListener('click', (ev) => {
     const target = ev.target;
@@ -136,14 +143,10 @@ popup.addEventListener('click', (ev) => {
     }
 });
 
-friendPopup.addEventListener('click', function() {
-    createPopupOne()
-    popup.classList.toggle('active');
 
-})
 
-function createPopupOne() {
-    let num = friendPopup.getAttribute("data-num")
+
+function createPopup() {
 
     popupCard.querySelector('.popup-image').src = `${pets[num].img}`;
     popupCard.querySelector('.popup-title').innerHTML = pets[num].name;
@@ -155,8 +158,108 @@ function createPopupOne() {
     popupCard.querySelector('.parasite').innerHTML = pets[num].parasites;
 }
 
-
-
 function closePopup() {
     popup.classList.remove('active');
+}
+
+// document.addEventListener('click', (event) => {
+//     const target = event.target;
+//     if (target.closest('div .pet-name')) {
+//         cardName = target.childNodes.textContent;
+//         console.log(cardName);
+//     }
+// })
+
+// friendPopup.addEventListener('click', function() {
+//     createPopup()
+//     popup.classList.toggle('active');
+
+// });
+
+
+/* pagination */
+
+const thisPage = document.querySelector('.this-page');
+const nextPage = document.querySelector('.right');
+const endPage = document.querySelector('.right-end');
+const prevPage = document.querySelector('.left');
+const startPage = document.querySelector('.left-end');
+
+let n;
+let count = 1;
+
+function getMaxPage() {
+    let devWidth = window.innerWidth
+    if (devWidth >= 1200) {
+        n = 6
+    } else if (devWidth >= 768) {
+        n = 8;
+    } else {
+        n = 16;
+    }
+    return n;
+}
+
+
+nextPage.addEventListener('click', () => {
+    getMaxPage();
+    if (count < n) {
+        count += 1;
+        thisPage.innerHTML = count;
+    }
+
+})
+
+endPage.addEventListener('click', () => {
+    getMaxPage();
+    count = n;
+    thisPage.innerHTML = count;
+})
+
+prevPage.addEventListener('click', () => {
+    if (count > 1) {
+        count -= 1;
+        thisPage.innerHTML = count;
+    }
+
+})
+
+startPage.addEventListener('click', () => {
+    count = 1;
+    thisPage.innerHTML = count;
+})
+
+
+
+/*random array and cards*/
+const zero = document.getElementById('id0');
+
+
+function makeCard(numer, pet) {
+    pet.querySelector('.pet-img').src = `${pets[numer].img}`;
+    pet.querySelector('.pet-name').innerHTML = pets[numer].name;
+}
+
+
+
+let numsArray = [];
+
+makeNumArray()
+
+function makeNumArray() {
+    let num = Math.floor(Math.random() * 7);
+    numsArray.push(num);
+    while (numsArray.length < 8) {
+
+        while (numsArray.length <= 8) {
+            num += 3;
+            if (num > 8) {
+                num -= 8;
+                numsArray.push(num);
+            } else {
+                numsArray.push(num);
+            }
+        }
+    }
+    return numsArray;
 }
