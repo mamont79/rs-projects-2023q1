@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Minesweeper</title>
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/svg/mine.svg">
+</head>
+<body>
+  <div class="centralizer">
+    <h1 class="title">Minesweeper</h1>
+    <div class="game-box">
+      <div class="controls">
+
+        <div class="new-game">
+          New
+        </div>
+
+        <div class="aim">
+          Aim: 
+          <input class="mines-number" value="10" name="mines-number" id="mines-number">
+        </div>
+
+        <div class="left">
+          10 to Win
+        </div>
+
+        <div class="timer">
+          0 sec
+        </div>
+
+      </div>
+      <div class="difficult"> 
+        <button class="button-small active">Easy</button>
+        <button class="button-medium">Medium</button>
+        <button class="button-large">Hard</button>
+      </div>
+      <div class="mine-field">
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        <div class="row">
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field danger"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+        </div>
+        
+      </div>
+    </div>
+
+
+
+    <h2 class="info">Produced by Pavel Dalhou</h2>
+  </div>
+  <script src="./src/index.js"></script>
+</body>
+</html>
