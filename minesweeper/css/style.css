@@ -52,6 +52,13 @@ body {
   text-align: center;
   line-height: 30px;
   border-radius: 10px;
+  border: 2px;
+  transition: all 0.7s;
+}
+
+.new-game:hover {
+  transform: scale(0.97);
+  background-color: rgb(6, 157, 159);
 }
 
 .aim,
@@ -104,6 +111,7 @@ body {
   height: 70%;
   font-size: 0.8em;
   cursor: pointer;
+  text-transform: capitalize;
   transition: all 0.3s;
   box-shadow: 2px 2px  white;
 }
@@ -149,7 +157,7 @@ body {
   margin: 1px;
   border-radius: 3px;
   background-color: rgb(20, 175, 253);
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 .field:hover {
   background-color: rgb(5, 157, 233);
@@ -165,7 +173,7 @@ body {
   background-size: contain;
   opacity: 0.8;
 }
-.danger.active {
+.field.danger {
   background-image: url("../assets/svg/mine.svg");
   background-size: contain;
   background-color: rgb(253, 52, 92);
