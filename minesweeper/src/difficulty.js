@@ -5,6 +5,7 @@ const difficultLevel = [
     "height": 10,
     "class": "button-small active",
     "level": 0,
+    "aim": 10,
   },
   {
     "title": "medium",
@@ -12,6 +13,7 @@ const difficultLevel = [
     "height": 15,
     "class": "button-medium",
     "level": 1,
+    "aim": 25,
   },
   {
     "title": "hard",
@@ -19,6 +21,7 @@ const difficultLevel = [
     "height": 25,
     "class": "button-large",
     "level": 2,
+    "aim": 50,
   },
 ];
 
