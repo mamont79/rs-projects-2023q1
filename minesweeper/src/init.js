@@ -1,7 +1,9 @@
 import { difficultLevel } from "../src/difficulty.js";
+import { koefs, matrix } from "../src/field-matrix.js"
 
 
 function buildHTML(level = 0) {
+  let endGame = '<div class="gameover">Try again</div>';
   
   let centralizer = '<div class="centralizer"></div>';
 
@@ -25,7 +27,7 @@ function buildHTML(level = 0) {
     buttons += `<button class="${difficultLevel[i].class}" >${difficultLevel[i].title}</button>`;
   }
 
-  document.querySelector("body").innerHTML = centralizer;
+  document.querySelector("body").innerHTML = endGame + centralizer;
   document.querySelector(".centralizer").innerHTML = title + gameBox + info;
   document.querySelector(".game-box").innerHTML = controls + difficult + mineField;
   document.querySelector(".controls").innerHTML = controlItems;
@@ -34,10 +36,17 @@ function buildHTML(level = 0) {
 
 function buildField(level = 0) {
   let insertText = '';
-  for (let i = 1; i <= difficultLevel[level].height; i++) {
+  for (let i = 0; i < difficultLevel[level].height; i++) {
     insertText += '<div class="row">';
-    for (let j = 1; j <= difficultLevel[level].width; j++) {
-      insertText += `<div class="field" data="${i}-${j}"></div>`
+    for (let j = 0; j < difficultLevel[level].width; j++) {
+      let num = koefs[i][j];
+      if (num > 0 && matrix[i][j] != 10) {
+        insertText += `<div class="field" data="${i}-${j}">${num}</div>`;
+      } else if (num > 0 && matrix[i][j] == 10) {
+        insertText += `<div class="field" data="${i}-${j}"></div>`;
+      } else {
+        insertText += `<div class="field" data="${i}-${j}"></div>`;
+      }
     }
     insertText += '</div>';
   }

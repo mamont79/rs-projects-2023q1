@@ -5,6 +5,7 @@ let matrix = [];
 let koefs = [];
 
 function buildMatrix(level = 0, count = 10) {
+  matrix = [];
   let mineArray = [];
   let fields = difficultLevel[level].height * difficultLevel[level].width; 
   for (let i = 0; i < fields; i++) {
@@ -47,7 +48,7 @@ function shuffle(array) {
 
 
 function koefBuild(matrix) {
-  // let result = [];
+  koefs = [];
   let w = matrix[0].length;
   let h = matrix.length;
 
