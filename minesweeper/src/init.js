@@ -1,7 +1,7 @@
 import { difficultLevel } from "../src/difficulty.js";
 
 
-function buildHTML() {
+function buildHTML(level = 0) {
   
   let centralizer = '<div class="centralizer"></div>';
 
@@ -16,8 +16,8 @@ function buildHTML() {
   let info = '<h2 class="info">Produced by Pavel Dalhou</h2>';
 
   let controlItems = '<div class="new-game">New</div>';
-      controlItems += '<div class="aim">Aim:<input class="mines-number" value="10" name="mines-number" id="mines-number"></div>';
-      controlItems += '<div class="left">10 to Win</div>';
+      controlItems += `<div class="aim">Aim:<input class="mines-number" value="${difficultLevel[level].aim}" name="mines-number" id="mines-number"></div>`;
+      controlItems += `<div class="left">${difficultLevel[level].aim} to Win</div>`;
       controlItems += '<div class="timer">0 sec</div>';
 
   let buttons = '';
