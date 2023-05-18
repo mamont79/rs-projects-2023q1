@@ -8,17 +8,57 @@ buildMatrix();
 buildHTML();
 buildField();
 
-let targetFields = document.querySelectorAll(".field");
 const newGame = document.querySelector(".new-game");
 const leftMines = document.querySelector(".left");
+const easy = document.querySelector(".button-small");
+const medium = document.querySelector(".button-medium");
+const hard = document.querySelector(".button-large");
+let targetFields = document.querySelectorAll(".field");
 let moves = 0;
 
+const audio = new Audio("../assets/audio/click.mp3");
+
+targetFields.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.playbackRate = 2.0;
+    audio.play();
+  });
+});
+
+
+easy.addEventListener('click', function() {
+  easy.classList.add("active");
+  medium.classList.remove("active");
+  hard.classList.remove("active");
+})
+
+medium.addEventListener('click', function() {
+  easy.classList.remove("active");
+  medium.classList.add("active");
+  hard.classList.remove("active");
+})
+
+hard.addEventListener('click', function() {
+  easy.classList.remove("active");
+  medium.classList.remove("active");
+  hard.classList.add("active");
+})
 
 
 newGame.addEventListener('click', function() {
   document.querySelector(".gameover").classList.remove("active");
+  document.querySelector(".wingame").classList.remove("active");
 
   let count = document.querySelector("input").value;
+  if (count > 99) {
+    count = 99;
+  }
+  if (count < 1) {
+    count = 1;
+  } 
+  if (Number.isNaN(count*1)) {
+    count = 10;
+  }
   
   buildMatrix();
   targetFields.forEach(function (element) {
@@ -32,6 +72,7 @@ newGame.addEventListener('click', function() {
       element.textContent = '';
     }
   })
+  document.querySelector("input").value = count;
   document.querySelector(".timer").textContent = "0 s";
   document.querySelector(".left").textContent = `${count} to win`;
   stopTimer();
@@ -54,6 +95,16 @@ targetFields.forEach(function (element) {
         this.classList.add("open");
       }
       console.log(moves);
+    }
+
+    let openedFields = document.querySelectorAll(".open").length;
+    let mines = document.querySelector("input").value;
+    let allFields = document.querySelectorAll(".field").length;
+    let left = allFields - openedFields - mines;
+    if (left == 0) {
+      document.querySelector(".wingame").classList.add("active");
+      stopTimer();
+      document.querySelector(".wingame").textContent = `You won in ${document.querySelector(".timer").textContent} with ${moves} moves!`;
     }
   };
 

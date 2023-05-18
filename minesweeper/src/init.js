@@ -3,7 +3,8 @@ import { koefs, matrix, buildMatrix } from "../src/field-matrix.js"
 
 
 function buildHTML(level = 0) {
-  let endGame = '<div class="gameover">Try again</div>';
+  let endGame = '<div class="gameover">BOOOOM!!! <br/> Try "New Game"</div>';
+  let winGame = '<div class="wingame"></div>';
   
   let centralizer = '<div class="centralizer"></div>';
 
@@ -27,7 +28,7 @@ function buildHTML(level = 0) {
     buttons += `<button class="${difficultLevel[i].class}" >${difficultLevel[i].title}</button>`;
   }
 
-  document.querySelector("body").innerHTML = endGame + centralizer;
+  document.querySelector("body").innerHTML = centralizer + endGame + winGame;
   document.querySelector(".centralizer").innerHTML = title + gameBox + info;
   document.querySelector(".game-box").innerHTML = controls + difficult + mineField;
   document.querySelector(".controls").innerHTML = controlItems;
