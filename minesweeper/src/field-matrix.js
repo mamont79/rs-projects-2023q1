@@ -28,7 +28,7 @@ function buildMatrix(level = 0, count = 10) {
   } 
 
   koefBuild(matrix);
-  console.log(matrix);
+  // console.log(matrix);
 }
 
 
@@ -84,7 +84,7 @@ function koefBuild(matrix) {
       koefs.push(arrInRes);
   }
 
-  console.log(koefs);
+  // console.log(koefs);
 }
 
 
