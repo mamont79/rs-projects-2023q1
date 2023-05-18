@@ -1,6 +1,7 @@
 import { buildHTML, buildField } from "../src/init.js";
 import { matrix, buildMatrix, koefs} from "../src/field-matrix.js";
 import { startTimer, stopTimer } from "../src/timer.js";
+import { openZero } from "../src/open-zero.js";
 
 const gameField = document.querySelectorAll(".field");
 
@@ -16,12 +17,14 @@ const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
 let moves = 0;
 
-const audio = new Audio("../assets/audio/click.mp3");
+const click = new Audio("../assets/audio/click.mp3");
+const lose = new Audio("../assets/audio/denonation.mp3");
+const win = new Audio("../assets/audio/win.mp3");
 
 targetFields.forEach(button => {
   button.addEventListener("click", () => {
-    audio.playbackRate = 2.0;
-    audio.play();
+    click.playbackRate = 2.0;
+    click.play();
   });
 });
 
@@ -91,10 +94,16 @@ targetFields.forEach(function (element) {
         this.classList.add("danger");
         stopTimer();
         document.querySelector(".gameover").classList.add("active");
+        lose.playbackRate = 1.5;
+        lose.play();
       } else {
         this.classList.add("open");
+        if (koefs[codeButton[0]][codeButton[1]] == 0) {
+          openZero(koefs, codeButton[0], codeButton[1]);
+        }
       }
       console.log(moves);
+      
     }
 
     let openedFields = document.querySelectorAll(".open").length;
@@ -105,6 +114,8 @@ targetFields.forEach(function (element) {
       document.querySelector(".wingame").classList.add("active");
       stopTimer();
       document.querySelector(".wingame").textContent = `You won in ${document.querySelector(".timer").textContent} with ${moves} moves!`;
+      win.playbackRate = 1.5;
+      win.play();
     }
   };
 
