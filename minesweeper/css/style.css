@@ -118,32 +118,39 @@ body {
 .button-medium,
 .button-large {
   border: none;
-  border-radius: 3px;
-  background-color: goldenrod;
+  border-radius: 10px;
   margin: auto;
   width: 30%;
   height: 70%;
-  font-size: 0.8em;
+  line-height: 0.75em;
+  font-size: 0.75em;
   cursor: pointer;
   text-transform: capitalize;
   transition: all 0.3s;
-  box-shadow: 2px 2px  white;
+    
+}
+.button-small {
+  background-color: rgb(66, 231, 85);
+}
+.button-medium {
+  background-color: rgb(241, 192, 67);
+}
+
+.button-large {
+  background-color: rgb(234, 83, 59);
 }
 
 .button-small:hover,
 .button-medium:hover,
 .button-large:hover {
-  transform: scale(0.95);
-  background-color: yellowgreen;
-  box-shadow: 1px 1px  white;
+  opacity: 0.9;;
 } 
 
 .button-small.active,
 .button-medium.active,
 .button-large.active {
-  transform: scale(0.94);
-  box-shadow: none;
-  background-color: rgb(255, 242, 0);
+  border: 4px solid white;
+  border-radius: 10px;
 } 
 
 .mine-field {
@@ -225,7 +232,33 @@ body {
   width: 400px;
   height: 400px;
   margin-left: calc(50% - 200px);
-  margin-top: 200px;
-  font-size: 40px;
-  opacity: 0.8;
+  margin-top: -50%;
+  font-size: 32px;
+  opacity: 0.9;
+}
+
+.wingame {
+  position: fixed;
+  visibility: hidden;
+  margin-left: calc(50% - 5px);
+  margin-top: calc(40% - 5px);
+  font-size: 1px;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  background-image: url("../assets/img/win.jpeg");
+  background-size: contain;
+  border-radius: 7px;
+  opacity: 0.7;
+  transition: all 0.8s;
+}
+
+.wingame.active {
+  visibility: visible;
+  width: 450px;
+  height: 450px;
+  margin-left: calc(50% - 225px);
+  margin-top: -52%;
+  font-size: 32px;
+  opacity: 0.9;
 }
