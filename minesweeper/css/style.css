@@ -61,11 +61,25 @@ body {
   background-color: rgb(6, 157, 159);
 }
 
-.aim,
-.left {
+.aim {
   margin-top: 10px;
   width: 20%;
+  height: 25px;
+}
+
+.left {
   height: 30px;
+  margin-top: 5px;
+  width: 20%;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px;
+  transition: all 0.7s;
+}
+
+.left.active {
+  background-color: red;
+  font-weight: bold;
 }
 
 .timer {

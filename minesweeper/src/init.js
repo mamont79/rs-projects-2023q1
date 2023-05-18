@@ -1,5 +1,5 @@
 import { difficultLevel } from "../src/difficulty.js";
-import { koefs, matrix } from "../src/field-matrix.js"
+import { koefs, matrix, buildMatrix } from "../src/field-matrix.js"
 
 
 function buildHTML(level = 0) {
@@ -18,9 +18,9 @@ function buildHTML(level = 0) {
   let info = '<h2 class="info">Produced by Pavel Dalhou</h2>';
 
   let controlItems = '<div class="new-game">New</div>';
-      controlItems += `<div class="aim">Aim:<input class="mines-number" value="${difficultLevel[level].aim}" name="mines-number" id="mines-number"></div>`;
+      controlItems += `<div class="aim">Aim:<input type="text" class="mines-number" value="${difficultLevel[level].aim}" name="mines-number" id="mines-number"></div>`;
       controlItems += `<div class="left">${difficultLevel[level].aim} to Win</div>`;
-      controlItems += '<div class="timer">0 sec</div>';
+      controlItems += '<div class="timer">0 s</div>';
 
   let buttons = '';
   for (let i = 0; i < difficultLevel.length; i++) {
@@ -52,5 +52,7 @@ function buildField(level = 0) {
   }
   document.querySelector(".mine-field").innerHTML = insertText;
 }
+
+// function innerKoefs()
 
 export { buildHTML, buildField };
