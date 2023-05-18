@@ -17,9 +17,9 @@ const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
 let moves = 0;
 
-const click = new Audio("../../assets/audio/click.mp3");
-const lose = new Audio("/assets/audio/denonation.mp3");
-const win = new Audio("./assets/audio/win.mp3");
+const click = new Audio("../minesweeper/assets/audio/click.mp3");
+const lose = new Audio("../minesweeper/assets/audio/denonation.mp3");
+const win = new Audio("../minesweeper/assets/audio/win.mp3");
 
 targetFields.forEach(button => {
   button.addEventListener("click", () => {
