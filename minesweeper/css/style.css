@@ -24,7 +24,7 @@ body {
 .game-box {
   margin: 0 auto 15px;
   width: 500px;
-  height: 580px;
+  height: 600px;
   border: 3px solid black;
   border-radius: 10px;
   background-color: gray;
@@ -36,7 +36,7 @@ body {
   justify-content: space-around;
   margin: 1px auto;
   width:calc(100% - 10px);
-  height: 40px;
+  height: 35px;
   border: 3px solid black;
   border-radius: 10px;
   background-color: rgb(229, 241, 86);
@@ -45,12 +45,12 @@ body {
 
 .new-game {
   width: 20%;
-  height: 30px;
+  height: 26px;
   margin-top: 5px;
   text-transform: none;
   background-color: rgb(3, 204, 207);
   text-align: center;
-  line-height: 30px;
+  line-height: 26px;
   border-radius: 10px;
   border: 2px;
   transition: all 0.7s;
@@ -62,17 +62,17 @@ body {
 }
 
 .aim {
-  margin-top: 10px;
+  margin-top: 5px;
   width: 20%;
   height: 25px;
 }
 
 .left {
-  height: 30px;
+  height: 26px;
   margin-top: 5px;
   width: 20%;
   text-align: center;
-  line-height: 30px;
+  line-height: 26px;
   border-radius: 10px;
   transition: all 0.7s;
 }
@@ -82,16 +82,32 @@ body {
   font-weight: bold;
 }
 
-.timer {
-  width: 20%;
-  height: 30px;
-  margin-top: 5px;
+.timer,
+.moves {
+  width: 35%;
+  height: 25px;
+  margin-top: 2px;
   background-color: black;
   color: red;
   text-transform: lowercase;
   text-align: center;
-  line-height: 30px;
+  line-height: 25px;
   border-radius: 10px;
+}
+
+.win-results {
+  width: 25px;
+  height: 25px;
+  border: 3px solid gold;
+  background-image: url("../assets/img/win.jpeg");
+  background-size: contain;
+  border-radius: 10px;
+  transition: all 0.5s;
+  opacity: 0.8;
+}
+.win-results:hover {
+  border: 3px solid rgb(255, 166, 0);
+  opacity: 1;
 }
 
 .mines-number {
@@ -103,11 +119,23 @@ body {
   text-align: center;
 }
 
+.game-info {
+  display: flex;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 1px;
+  height: 29px;
+  width:calc(100% - 10px);
+  border: 3px solid black;
+  border-radius: 10px;
+}
 .difficult {
   display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: auto;
   height: 30px;
   width:calc(100% - 10px);
@@ -156,7 +184,7 @@ body {
 .mine-field {
   margin: 1px auto;
   width: calc(100% - 10px);
-  height: calc(100% - 90px);
+  height: calc(100% - 120px);
   border: 3px solid black;
   border-radius: 10px;
   background-color: darkslategray;
@@ -178,19 +206,20 @@ body {
   margin: 1px;
   font-size: 0;
   border-radius: 3px;
-  background-color: rgb(20, 175, 253);
-  transition: all 0.5s;
+  background: rgb(20, 175, 253);
+  transition: background 0.5s;
 }
 .field:hover {
-  background-color: rgb(5, 157, 233);
+  background: rgb(5, 157, 233);
 }
 
 .field.open {
-  font-size: 20px;
+  font-size: 32px;
+  font-weight: 900;
   text-align: center;
-  line-height: 40px;
+  line-height: 45px;
   transform: scale(0.95);
-  background-color: white;
+  background: white;
 }
 
 .field.block {
@@ -229,12 +258,12 @@ body {
 
 .gameover.active {
   visibility: visible;
-  width: 480px;
-  height: 480px;
-  margin-left: 10px;
-  margin-top: -490px;
-  font-size: 32px;
-  opacity: 0.9;
+  width: 490px;
+  height: 475px;
+  margin-left: 5px;
+  margin-top: -480px;
+  font-size: 28px;
+  opacity: 0.8;
 }
 
 .wingame {
@@ -255,10 +284,10 @@ body {
 
 .wingame.active {
   visibility: visible;
-  width: 480px;
-  height: 480px;
-  margin-left: 10px;
-  margin-top: -490px;
+  width: 490px;
+  height: 475px;
+  margin-left: 5px;
+  margin-top: -480px;
   font-size: 28px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
