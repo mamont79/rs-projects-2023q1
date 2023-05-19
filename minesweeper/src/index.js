@@ -31,6 +31,10 @@ const click = new Audio("../minesweeper/assets/audio/click.mp3");
 const lose = new Audio("../minesweeper/assets/audio/denonation.mp3");
 const win = new Audio("../minesweeper/assets/audio/win.mp3");
 
+document.querySelector(".winners").addEventListener('click', function(){
+    document.querySelector(".winners").classList.remove("active");
+})
+
 targetFields.forEach(button => {
   button.addEventListener("click", () => {
     click.playbackRate = 2.0;
@@ -64,6 +68,7 @@ hard.addEventListener('click', function() {
 newGame.addEventListener('click', function() {
   document.querySelector(".gameover").classList.remove("active");
   document.querySelector(".wingame").classList.remove("active");
+  document.querySelector(".winners").classList.remove("active");
 
   let count = document.querySelector("input").value;
   if (count > 99) {
