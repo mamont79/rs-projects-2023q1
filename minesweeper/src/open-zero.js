@@ -39,13 +39,11 @@ function openZero(array, row, col) {
     if (!field.classList.contains("open") && field.textContent == '') {
       let newEl = field.getAttribute("data").split('-');
       field.classList.add("open");
-      openZero(array, newEl[0], newEl[1])
+      openZero(array, newEl[0], newEl[1]);
     } else {
       field.classList.add("open");
     }
-    
   }
-  console.log(listForAdd);
 };
 
 export { openZero };

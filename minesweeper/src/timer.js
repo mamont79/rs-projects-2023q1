@@ -7,7 +7,7 @@ function tick(){
 
 function add() {
   tick();
-  document.querySelector(".timer").textContent = sec + ' s';
+  document.querySelector(".timer").textContent = sec + ' sec';
   startTimer();
 }
 

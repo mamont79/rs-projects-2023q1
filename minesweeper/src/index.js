@@ -2,6 +2,7 @@ import { buildHTML, buildField } from "../src/init.js";
 import { matrix, buildMatrix, koefs} from "../src/field-matrix.js";
 import { startTimer, stopTimer } from "../src/timer.js";
 import { openZero } from "../src/open-zero.js";
+import { colorNum } from "../src/coloring.js"
 
 const gameField = document.querySelectorAll(".field");
 
@@ -16,6 +17,10 @@ const medium = document.querySelector(".button-medium");
 const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
 let moves = 0;
+
+// const click = new Audio("../assets/audio/click.mp3");
+// const lose = new Audio("../assets/audio/denonation.mp3");
+// const win = new Audio("../assets/audio/win.mp3");
 
 const click = new Audio("../minesweeper/assets/audio/click.mp3");
 const lose = new Audio("../minesweeper/assets/audio/denonation.mp3");
@@ -74,10 +79,13 @@ newGame.addEventListener('click', function() {
     } else {
       element.textContent = '';
     }
+    colorNum(koefs, idElem[0], idElem[1]);
+    
   })
   document.querySelector("input").value = count;
-  document.querySelector(".timer").textContent = "0 s";
+  document.querySelector(".timer").textContent = "0 sec";
   document.querySelector(".left").textContent = `${count} to win`;
+  document.querySelector(".moves").textContent = 0 + ' moves';
   stopTimer();
   moves = 0;
 })
@@ -87,6 +95,7 @@ targetFields.forEach(function (element) {
     let codeButton = this.getAttribute("data").split("-");
     if (!this.classList.contains("block") && !document.querySelector(".gameover").classList.contains("active")) {
       moves += 1;
+      document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
         startTimer();
       }
@@ -100,7 +109,7 @@ targetFields.forEach(function (element) {
         this.classList.add("open");
         if (koefs[codeButton[0]][codeButton[1]] == 0) {
           openZero(koefs, codeButton[0], codeButton[1]);
-        }
+        } 
       }
       console.log(moves);
       
@@ -123,6 +132,7 @@ targetFields.forEach(function (element) {
     event.preventDefault();
     if (!this.classList.contains("open") && !document.querySelector(".gameover").classList.contains("active")) {
       moves += 1;
+      document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
         startTimer();
       }
