@@ -291,3 +291,39 @@ body {
   font-size: 28px;
   opacity: 0.8;
 }
+
+.winners {
+  position: fixed;
+  visibility: hidden;
+  margin-left: calc(50% - 5px);
+  margin-top: calc(40% - 5px);
+  font-size: 1px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(229, 170, 21);
+  background-image: url("../assets/img/winners.png");
+  background-size: contain;
+  border-radius: 7px;
+  transition: all 0.8s;
+}
+.winners.active {
+  visibility: visible;
+  width: 490px;
+  height: 475px;
+  margin-left: 5px;
+  margin-top: -480px;
+  font-size: 20px;
+  opacity: 1;
+}
+
+.win-title {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 28px;
+}
+
+.winner-list {
+  margin-left: 60px;
+  line-height: 30px;
+}
+

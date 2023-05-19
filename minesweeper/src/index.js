@@ -2,13 +2,17 @@ import { buildHTML, buildField } from "../src/init.js";
 import { matrix, buildMatrix, koefs} from "../src/field-matrix.js";
 import { startTimer, stopTimer } from "../src/timer.js";
 import { openZero } from "../src/open-zero.js";
-import { colorNum } from "../src/coloring.js"
+import { colorNum } from "../src/coloring.js";
+import { saveWinners, getWinners, winners } from "../src/lock-stor.js";
 
 const gameField = document.querySelectorAll(".field");
 
 buildMatrix();
 buildHTML();
 buildField();
+if (localStorage.getItem("winners")) {
+  getWinners();
+}
 
 const newGame = document.querySelector(".new-game");
 const leftMines = document.querySelector(".left");
@@ -16,6 +20,7 @@ const easy = document.querySelector(".button-small");
 const medium = document.querySelector(".button-medium");
 const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
+let winButton = document.querySelector(".win-results");
 let moves = 0;
 
 // const click = new Audio("../assets/audio/click.mp3");
@@ -33,6 +38,9 @@ targetFields.forEach(button => {
   });
 });
 
+winButton.addEventListener('click', function() {
+  document.querySelector(".winners").classList.toggle("active");
+})
 
 easy.addEventListener('click', function() {
   easy.classList.add("active");
@@ -123,6 +131,7 @@ targetFields.forEach(function (element) {
       document.querySelector(".wingame").classList.add("active");
       stopTimer();
       document.querySelector(".wingame").textContent = `You won in ${document.querySelector(".timer").textContent} with ${moves} moves!`;
+      saveWinners(document.querySelector(".timer").textContent, moves)
       win.playbackRate = 1.5;
       win.play();
     }
