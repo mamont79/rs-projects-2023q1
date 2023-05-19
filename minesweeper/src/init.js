@@ -5,6 +5,7 @@ import { colorNum } from "../src/coloring.js";
 function buildHTML(level = 0) {
   let endGame = '<div class="gameover">BOOOOM!!! <br/> Try "New Game"</div>';
   let winGame = '<div class="wingame"></div>';
+  let winResults = '<div class="winners"></div>';
   
   let centralizer = '<div class="centralizer"></div>';
 
@@ -35,7 +36,7 @@ function buildHTML(level = 0) {
 
   document.querySelector("body").innerHTML = centralizer;
   document.querySelector(".centralizer").innerHTML = title + gameBox + info;
-  document.querySelector(".game-box").innerHTML = controls + gameInfo + difficult + mineField + endGame + winGame;
+  document.querySelector(".game-box").innerHTML = controls + gameInfo + difficult + mineField + endGame + winGame + winResults;
   document.querySelector(".controls").innerHTML = controlItems;
   document.querySelector(".game-info").innerHTML = gameInfoItems;
   document.querySelector(".difficult").innerHTML = buttons;
