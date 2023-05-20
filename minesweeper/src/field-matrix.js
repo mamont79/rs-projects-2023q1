@@ -4,7 +4,7 @@ import { difficultLevel } from "../src/difficulty.js";
 let matrix = [];
 let koefs = [];
 
-function buildMatrix(level = 0, count = 10) {
+function buildMatrix(level = 0, count = 10, firstField) {
   matrix = [];
   let mineArray = [];
   let fields = difficultLevel[level].height * difficultLevel[level].width; 
@@ -17,7 +17,14 @@ function buildMatrix(level = 0, count = 10) {
   }
 
   shuffle(mineArray);
-
+  let firstIndex = +firstField[0] * difficultLevel[level].height + +firstField[1];
+  console.log(firstIndex);
+  if(mineArray[firstIndex] == 10) {
+    let changeMine = mineArray.indexOf(0);
+    mineArray[firstIndex] = 0;
+    mineArray[changeMine] = 10;
+  }
+  
   let row = [];
   for (let j = 0; j < mineArray.length; j++) {
     row.push(mineArray[j]);
