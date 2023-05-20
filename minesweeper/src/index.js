@@ -7,7 +7,7 @@ import { saveWinners, getWinners, winners } from "../src/lock-stor.js";
 
 const gameField = document.querySelectorAll(".field");
 
-buildMatrix();
+buildMatrix(0, 10, "0-0");
 buildHTML();
 buildField();
 if (localStorage.getItem("winners")) {
@@ -22,6 +22,7 @@ const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
 let winButton = document.querySelector(".win-results");
 let moves = 0;
+let level = 0;
 
 // const click = new Audio("../assets/audio/click.mp3");
 // const lose = new Audio("../assets/audio/denonation.mp3");
@@ -50,18 +51,21 @@ easy.addEventListener('click', function() {
   easy.classList.add("active");
   medium.classList.remove("active");
   hard.classList.remove("active");
+  level = 0;
 })
 
 medium.addEventListener('click', function() {
   easy.classList.remove("active");
   medium.classList.add("active");
   hard.classList.remove("active");
+  level = 1;
 })
 
 hard.addEventListener('click', function() {
   easy.classList.remove("active");
   medium.classList.remove("active");
   hard.classList.add("active");
+  level = 2;
 })
 
 
@@ -69,32 +73,25 @@ newGame.addEventListener('click', function() {
   document.querySelector(".gameover").classList.remove("active");
   document.querySelector(".wingame").classList.remove("active");
   document.querySelector(".winners").classList.remove("active");
-
+  
   let count = document.querySelector("input").value;
   if (count > 99) {
     count = 99;
   }
-  if (count < 1) {
-    count = 1;
+  if (count < 10) {
+    count = 10;
   } 
   if (Number.isNaN(count*1)) {
     count = 10;
   }
-  
-  buildMatrix();
+  // document.querySelector(".mine-field").innerHTML = '';
+  // console.log(document.querySelector(".mine-field"));
   targetFields.forEach(function (element) {
     element.classList.remove("open");
     element.classList.remove("danger");
     element.classList.remove("block");
-    let idElem = element.getAttribute('data').split('-');
-    if (koefs[idElem[0]][idElem[1]] > 0 && matrix[idElem[0]][idElem[1]] != 10) {
-      element.textContent = koefs[idElem[0]][idElem[1]];
-    } else {
-      element.textContent = '';
-    }
-    colorNum(koefs, idElem[0], idElem[1]);
-    
   })
+
   document.querySelector("input").value = count;
   document.querySelector(".timer").textContent = "0 sec";
   document.querySelector(".left").textContent = `${count} to win`;
@@ -110,6 +107,18 @@ targetFields.forEach(function (element) {
       moves += 1;
       document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
+        buildMatrix(level, document.querySelector("input").value, codeButton);
+        console.log(document.querySelector("input").value);
+        targetFields.forEach(function (element) {
+          let idElem = element.getAttribute('data').split('-');
+          if (koefs[idElem[0]][idElem[1]] > 0 && matrix[idElem[0]][idElem[1]] != 10) {
+            element.textContent = koefs[idElem[0]][idElem[1]];
+          } else {
+            element.textContent = '';
+          }
+          colorNum(koefs, idElem[0], idElem[1]);
+        })
+
         startTimer();
       }
       if (matrix[codeButton[0]][codeButton[1]] == 10) {
@@ -124,7 +133,7 @@ targetFields.forEach(function (element) {
           openZero(koefs, codeButton[0], codeButton[1]);
         } 
       }
-      console.log(moves);
+      // console.log(moves);
       
     }
 
@@ -167,7 +176,7 @@ targetFields.forEach(function (element) {
           leftMines.classList.remove("active")
         }
       }
-      console.log(moves);
+      // console.log(moves);
     }
   };
   
