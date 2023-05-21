@@ -1,3 +1,5 @@
+import { matrix, koefs } from "../src/field-matrix.js";
+
 let winners = [];
 
 
@@ -30,4 +32,22 @@ function getWinners() {
   document.querySelector(".winner-list").innerHTML = insertWinners;
 }
 
-export { saveWinners, getWinners, winners }
+function saveGame() {
+  let htmlFile = document.querySelector(".game-box").innerHTML;
+  let moves = document.querySelector(".moves").textContent.split(' ')[0];
+  localStorage.setItem("moves", moves);
+  localStorage.setItem("htmlFile", htmlFile);
+  localStorage.setItem("matrix", JSON.stringify(matrix));
+  localStorage.setItem("koefs", JSON.stringify(koefs));
+}
+
+function loadGame() {
+  console.log(matrix);
+  document.querySelector(".game-box").innerHTML = localStorage.getItem("htmlFile");
+  JSON.parse(localStorage.getItem("matrix"));
+  JSON.parse(localStorage.getItem("koefs"));
+  localStorage.getItem("moves");
+  console.log(matrix);
+}
+
+export { saveWinners, getWinners, winners, saveGame, loadGame }
