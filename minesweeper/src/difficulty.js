@@ -8,15 +8,15 @@ const difficultLevel = [
     "aim": 10,
   },
   {
-    "title": "medium",
+    "title": "day",
     "width": 15,
     "height": 15,
-    "class": "button-medium",
+    "class": "button-medium active",
     "level": 1,
     "aim": 25,
   },
   {
-    "title": "hard",
+    "title": "night",
     "width": 25,
     "height": 25,
     "class": "button-large",

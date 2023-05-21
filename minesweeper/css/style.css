@@ -2,7 +2,10 @@ body {
   width: 100%;
   height: 100vh;
   background: content-box radial-gradient(rgba(161, 250, 250, 0.6), rgba(1, 36, 50, 0.6));
-  
+  transition: all 1s;
+}
+body.night {
+  background: content-box radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 13, 77, 0.9));
 }
 
 .centralizer {
@@ -19,6 +22,10 @@ body {
   padding: 20px;
   font-size: 1.5em;
   text-align: center;
+  transition: all 1s;
+}
+.title.night {
+  color: gold;
 }
 
 .game-box {
@@ -27,7 +34,12 @@ body {
   height: 600px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: gray;
+  background-color: rgb(87, 87, 87);
+  transition: all 1s;
+}
+.game-box.night {
+  border: 3px solid rgb(199, 247, 5);
+  background-color: rgb(59, 50, 59);
 }
 
 .controls {
@@ -42,17 +54,23 @@ body {
   background-color: rgb(229, 241, 86);
   vertical-align: middle;
 }
+.controls.night {
+  border: 3px solid rgb(199, 247, 5);
+  background-color: rgb(155, 222, 253);
+}
 
 .new-game {
-  width: 20%;
+  width: 30%;
   height: 26px;
   margin-top: 5px;
   text-transform: none;
   background-color: rgb(3, 204, 207);
   text-align: center;
   line-height: 26px;
-  border-radius: 10px;
-  border: 2px;
+  border-top-left-radius: 15% 50%;
+  border-bottom-left-radius: 15% 50%;
+  border-top-right-radius: 15% 50%;
+  border-bottom-right-radius: 15% 50%;
   transition: all 0.7s;
 }
 
@@ -70,10 +88,13 @@ body {
 .left {
   height: 26px;
   margin-top: 5px;
-  width: 20%;
+  width: 30%;
   text-align: center;
   line-height: 26px;
-  border-radius: 10px;
+  border-top-left-radius: 15% 50%;
+  border-bottom-left-radius: 15% 50%;
+  border-top-right-radius: 15% 50%;
+  border-bottom-right-radius: 15% 50%;
   transition: all 0.7s;
 }
 
@@ -84,30 +105,34 @@ body {
 
 .timer,
 .moves {
-  width: 35%;
+  width: 30%;
   height: 25px;
   margin-top: 2px;
   background-color: black;
-  color: red;
+  color: rgb(247, 74, 74);
   text-transform: lowercase;
   text-align: center;
   line-height: 25px;
-  border-radius: 10px;
+  border: 2px solid rgb(183, 255, 225);
+  border-top-left-radius: 15% 50%;
+  border-bottom-left-radius: 15% 50%;
+  border-top-right-radius: 15% 50%;
+  border-bottom-right-radius: 15% 50%;
 }
 
 .win-results {
-  width: 25px;
-  height: 25px;
+  width: 60px;
+  height: 60px;
   border: 3px solid gold;
   background-image: url("../assets/img/win.jpeg");
   background-size: contain;
   border-radius: 10px;
   transition: all 0.5s;
-  opacity: 0.8;
 }
 .win-results:hover {
-  border: 3px solid rgb(255, 166, 0);
-  opacity: 1;
+  width: 58px;
+  height: 58px;
+  border: 4px solid rgb(255, 166, 0);
 }
 
 .mines-number {
@@ -131,6 +156,11 @@ body {
   border: 3px solid black;
   border-radius: 10px;
 }
+.game-info.night {
+  border: 3px solid rgb(199, 247, 5);
+  background-color: rgb(59, 50, 59);
+}
+
 .difficult {
   display: flex;
   flex-wrap: wrap;
@@ -142,43 +172,73 @@ body {
   border: 3px solid black;
   border-radius: 10px;
 }
+.difficult.night {
+  border: 3px solid rgb(199, 247, 5);
+  background-color: rgb(59, 50, 59);
+}
 .button-small,
 .button-medium,
 .button-large {
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin: auto;
-  width: 30%;
   height: 70%;
   line-height: 0.75em;
   font-size: 0.75em;
-  cursor: pointer;
   text-transform: capitalize;
   transition: all 0.3s;
-    
 }
 .button-small {
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 10px;
   background-color: rgb(66, 231, 85);
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+  border-top-right-radius: 10% 50%;
+  border-bottom-right-radius: 10% 50%;
 }
+.button-small.medium {
+  background-color: rgb(253, 242, 24);
+}
+.button-small.hard {
+  background-color: rgb(244, 126, 105);
+}
+.button-small.really {
+  background-color: rgb(243, 74, 27);
+  color: wheat;
+}
+
 .button-medium {
-  background-color: rgb(241, 192, 67);
+  width: 15%;
+  background-color: rgb(255, 208, 90);
+  margin-right: 0;
+  border-top-left-radius: 20% 50%;
+  border-bottom-left-radius: 20% 50%;
+  cursor: pointer;
 }
 
 .button-large {
-  background-color: rgb(234, 83, 59);
+  width: 15%;
+  margin-left: 0;
+  color: white;
+  background-color: rgb(21, 90, 252);
+  border-top-right-radius: 20% 50%;
+  border-bottom-right-radius: 20% 50%;
+  cursor: pointer;
 }
 
-.button-small:hover,
+/* .button-small:hover, */
 .button-medium:hover,
 .button-large:hover {
   opacity: 0.9;;
 } 
 
-.button-small.active,
+/* .button-small.active, */
 .button-medium.active,
 .button-large.active {
-  border: 4px solid white;
-  border-radius: 10px;
+  border: 2px solid rgb(183, 255, 225);
+  /* border-radius: 10px; */
 } 
 
 .mine-field {
@@ -188,6 +248,11 @@ body {
   border: 3px solid black;
   border-radius: 10px;
   background-color: darkslategray;
+  transition: all 1s;
+}
+.mine-field.night {
+  border: 3px solid rgb(199, 247, 5);
+  background-color: rgb(59, 50, 59);
 }
 
 .row {
@@ -238,6 +303,10 @@ body {
   width: auto;
   font-size: 0.75em;
   text-align: center;
+  transition: all 1s;
+}
+.info.night {
+  color: gold;
 }
 
 .gameover {

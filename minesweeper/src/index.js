@@ -3,7 +3,7 @@ import { matrix, buildMatrix, koefs} from "../src/field-matrix.js";
 import { startTimer, stopTimer } from "../src/timer.js";
 import { openZero } from "../src/open-zero.js";
 import { colorNum } from "../src/coloring.js";
-import { saveWinners, getWinners, winners } from "../src/lock-stor.js";
+import { saveWinners, getWinners, winners, saveGame, loadGame } from "../src/lock-stor.js";
 
 const gameField = document.querySelectorAll(".field");
 
@@ -13,6 +13,7 @@ buildField();
 if (localStorage.getItem("winners")) {
   getWinners();
 }
+
 
 const newGame = document.querySelector(".new-game");
 const leftMines = document.querySelector(".left");
@@ -48,24 +49,33 @@ winButton.addEventListener('click', function() {
 })
 
 easy.addEventListener('click', function() {
-  easy.classList.add("active");
-  medium.classList.remove("active");
-  hard.classList.remove("active");
-  level = 0;
+  easy.classList.add("active");  
 })
 
 medium.addEventListener('click', function() {
-  easy.classList.remove("active");
   medium.classList.add("active");
   hard.classList.remove("active");
-  level = 1;
+  document.querySelector("body").classList.remove("night");
+  document.querySelector(".title").classList.remove("night");
+  document.querySelector(".game-box").classList.remove("night");
+  document.querySelector(".controls").classList.remove("night");
+  document.querySelector(".game-info").classList.remove("night");
+  document.querySelector(".difficult").classList.remove("night");
+  document.querySelector(".mine-field").classList.remove("night");
+  document.querySelector(".info").classList.remove("night");
 })
 
 hard.addEventListener('click', function() {
-  easy.classList.remove("active");
-  medium.classList.remove("active");
+  medium.classList.remove("active");  
   hard.classList.add("active");
-  level = 2;
+  document.querySelector("body").classList.add("night");
+  document.querySelector(".title").classList.add("night");
+  document.querySelector(".game-box").classList.add("night");
+  document.querySelector(".controls").classList.add("night");
+  document.querySelector(".game-info").classList.add("night");
+  document.querySelector(".difficult").classList.add("night");
+  document.querySelector(".mine-field").classList.add("night");
+  document.querySelector(".info").classList.add("night");
 })
 
 
@@ -75,15 +85,39 @@ newGame.addEventListener('click', function() {
   document.querySelector(".winners").classList.remove("active");
   
   let count = document.querySelector("input").value;
-  if (count > 99) {
-    count = 99;
+  if (count <= 15) {
+    if (count < 10) {
+      count = 10;
+    }
+    easy.textContent = "Easy";
+    easy.classList.remove("medium");
+    easy.classList.remove("hard");
+    easy.classList.remove("really");
+  } else if (count < 25) {
+    easy.textContent = "Medium";
+    easy.classList.add("medium");
+    easy.classList.remove("hard");
+    easy.classList.remove("really");
+  } else if (count < 90) {
+    easy.textContent = "Hard";
+    easy.classList.remove("medium");
+    easy.classList.add("hard");
+    easy.classList.remove("really");
+  } else if (count > 90) {
+    if (count > 99) {
+      count = 99;
+    }
+    easy.textContent = "Really???";
+    easy.classList.remove("medium");
+    easy.classList.remove("hard");
+    easy.classList.add("really");
   }
-  if (count < 10) {
-    count = 10;
-  } 
+  
   if (Number.isNaN(count*1)) {
     count = 10;
+    easy.textContent = "Easy";
   }
+
   // document.querySelector(".mine-field").innerHTML = '';
   // console.log(document.querySelector(".mine-field"));
   targetFields.forEach(function (element) {
@@ -108,7 +142,6 @@ targetFields.forEach(function (element) {
       document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
         buildMatrix(level, document.querySelector("input").value, codeButton);
-        console.log(document.querySelector("input").value);
         targetFields.forEach(function (element) {
           let idElem = element.getAttribute('data').split('-');
           if (koefs[idElem[0]][idElem[1]] > 0 && matrix[idElem[0]][idElem[1]] != 10) {
@@ -149,6 +182,7 @@ targetFields.forEach(function (element) {
       win.playbackRate = 1.5;
       win.play();
     }
+    // saveGame();
   };
 
   element.oncontextmenu = function (event) {
@@ -178,8 +212,9 @@ targetFields.forEach(function (element) {
       }
       // console.log(moves);
     }
+    // saveGame();
   };
   
 });
 
-
+//console.log(document.querySelector("body").innerHTML);

@@ -67,6 +67,5 @@ function buildField(level = 0) {
   }
 }
 
-// function innerKoefs()
 
 export { buildHTML, buildField };
