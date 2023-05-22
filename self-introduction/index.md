@@ -1,8 +1,8 @@
-YouTube link for video:  
-https://youtu.be/U0A5P6w-0WU
+## YouTube link for video:  
+[You-tube link](https://youtu.be/U0A5P6w-0WU)
 
 
-Transcription:  
+## Transcription:  
 
 Hi all!
 My name is Pavel and this is my self-introduction video.
