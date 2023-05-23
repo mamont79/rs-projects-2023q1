@@ -213,13 +213,13 @@ targetFields.forEach(function (element) {
   element.oncontextmenu = function (event) {
     event.preventDefault();
     if (!this.classList.contains("open") && !document.querySelector(".gameover").classList.contains("active")) {
-      if(!this.classList.contains("open")) {
-        moves += 1;
-      }
-      document.querySelector(".moves").textContent = moves + ' moves';
-      if (moves == 1) {
-        startTimer();
-      }
+      // if(!this.classList.contains("open")) {
+      //   moves += 1;
+      // }
+      // document.querySelector(".moves").textContent = moves + ' moves';
+      // if (moves == 1) {
+      //   startTimer();
+      // }
       if (!this.classList.contains("block")) {
         this.classList.add("block");
         let left = leftMines.textContent.split(' ');
