@@ -76,6 +76,9 @@ medium.addEventListener('click', function() {
   document.querySelector(".difficult").classList.remove("night");
   document.querySelector(".mine-field").classList.remove("night");
   document.querySelector(".info").classList.remove("night");
+  targetFields.forEach(function(element) {
+    element.style.opacity = 1;
+  })
 })
 
 hard.addEventListener('click', function() {
@@ -89,6 +92,9 @@ hard.addEventListener('click', function() {
   document.querySelector(".difficult").classList.add("night");
   document.querySelector(".mine-field").classList.add("night");
   document.querySelector(".info").classList.add("night");
+  targetFields.forEach(function(element) {
+    element.style.opacity = 0.6;
+  })
 })
 
 

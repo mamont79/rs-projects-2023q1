@@ -263,7 +263,7 @@ body.night {
   height: calc(100% - 120px);
   border: 3px solid black;
   border-radius: 10px;
-  background-color: darkslategray;
+  background-color: gray;
   transition: all 1s;
 }
 .mine-field.night {
@@ -287,7 +287,8 @@ body.night {
   margin: 1px;
   font-size: 0;
   border-radius: 3px;
-  background: rgb(20, 175, 253);
+  background: blue;
+  opacity: 1;
   transition: background 0.5s;
 }
 .field:hover {
