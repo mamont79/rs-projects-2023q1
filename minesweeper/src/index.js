@@ -151,7 +151,9 @@ targetFields.forEach(function (element) {
   element.onclick = function (event) {
     let codeButton = this.getAttribute("data").split("-");
     if (!this.classList.contains("block") && !document.querySelector(".gameover").classList.contains("active")) {
-      moves += 1;
+      if(!this.classList.contains("open")) {
+        moves += 1;
+      }
       document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
         buildMatrix(level, document.querySelector("input").value, codeButton);
@@ -205,7 +207,9 @@ targetFields.forEach(function (element) {
   element.oncontextmenu = function (event) {
     event.preventDefault();
     if (!this.classList.contains("open") && !document.querySelector(".gameover").classList.contains("active")) {
-      moves += 1;
+      if(!this.classList.contains("open")) {
+        moves += 1;
+      }
       document.querySelector(".moves").textContent = moves + ' moves';
       if (moves == 1) {
         startTimer();
@@ -227,11 +231,11 @@ targetFields.forEach(function (element) {
           leftMines.classList.remove("active")
         }
       }
-      // console.log(moves);
     }
-    // saveGame();
+    if (this.classList.contains("open") && this.classList.contains("block") && !document.querySelector(".gameover").classList.contains("active")){
+      this.classList.remove("open");
+      this.classList.remove("block");
+    }
   };
   
 });
-
-//console.log(document.querySelector("body").innerHTML);
