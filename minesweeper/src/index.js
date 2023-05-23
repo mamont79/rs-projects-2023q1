@@ -22,8 +22,10 @@ const medium = document.querySelector(".button-medium");
 const hard = document.querySelector(".button-large");
 let targetFields = document.querySelectorAll(".field");
 let winButton = document.querySelector(".win-results");
+const soundBTN = document.querySelector(".sound");
 let moves = 0;
 let level = 0;
+let sound = 1;
 
 // const click = new Audio("../assets/audio/click.mp3");
 // const lose = new Audio("../assets/audio/denonation.mp3");
@@ -37,10 +39,21 @@ document.querySelector(".winners").addEventListener('click', function(){
     document.querySelector(".winners").classList.remove("active");
 })
 
+soundBTN.addEventListener('click', function() {
+  if (soundBTN.classList.contains('active')) {
+    sound = 0;
+  } else {
+    sound = 1;
+  }
+  soundBTN.classList.toggle("active");
+})
+
 targetFields.forEach(button => {
   button.addEventListener("click", () => {
-    click.playbackRate = 2.0;
-    click.play();
+    if (sound == 1) {
+      click.playbackRate = 2.0;
+      click.play();
+    }
   });
 });
 
@@ -158,8 +171,10 @@ targetFields.forEach(function (element) {
         this.classList.add("danger");
         stopTimer();
         document.querySelector(".gameover").classList.add("active");
-        lose.playbackRate = 1.5;
-        lose.play();
+        if (sound == 1) {
+          lose.playbackRate = 1.5;
+          lose.play();
+        }
       } else {
         this.classList.add("open");
         if (koefs[codeButton[0]][codeButton[1]] == 0) {
@@ -179,8 +194,10 @@ targetFields.forEach(function (element) {
       stopTimer();
       document.querySelector(".wingame").textContent = `You won in ${document.querySelector(".timer").textContent} with ${moves} moves!`;
       saveWinners(document.querySelector(".timer").textContent, moves)
-      win.playbackRate = 1.5;
-      win.play();
+      if (sound == 1) {
+        win.playbackRate = 1.5;
+        win.play();
+      }
     }
     // saveGame();
   };

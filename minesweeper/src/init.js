@@ -9,7 +9,8 @@ function buildHTML(level = 0) {
   
   let centralizer = '<div class="centralizer"></div>';
 
-  let title = '<h1 class="title">Minesweeper</h1>'
+  let title = '<h1 class="title">Minesweeper</h1>';
+  
 
   let gameBox = '<div class="game-box"></div>';
   
@@ -22,8 +23,8 @@ function buildHTML(level = 0) {
 
   let controlItems = '<div class="new-game">New</div>';
       controlItems += `<div class="aim">Aim:<input type="text" class="mines-number" value="${difficultLevel[level].aim}" name="mines-number" id="mines-number"></div>`;
+      controlItems += '<div class="sound active"></div>';
       controlItems += `<div class="left">${difficultLevel[level].aim} to Win</div>`;
-      
   
   let gameInfoItems = '<div class="timer">0 sec</div>';
       gameInfoItems += '<div class="win-results"></div>';
@@ -35,7 +36,7 @@ function buildHTML(level = 0) {
   }
 
   document.querySelector("body").innerHTML = centralizer;
-  document.querySelector(".centralizer").innerHTML = title + gameBox + info;
+  document.querySelector(".centralizer").innerHTML = title  + gameBox + info;
   document.querySelector(".game-box").innerHTML = controls + gameInfo + difficult + mineField + endGame + winGame + winResults;
   document.querySelector(".controls").innerHTML = controlItems;
   document.querySelector(".game-info").innerHTML = gameInfoItems;

@@ -19,7 +19,7 @@ body.night {
 
 .title {
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 0;
   font-size: 1.5em;
   text-align: center;
   transition: all 1s;
@@ -27,6 +27,7 @@ body.night {
 .title.night {
   color: gold;
 }
+
 
 .game-box {
   margin: 0 auto 15px;
@@ -60,17 +61,17 @@ body.night {
 }
 
 .new-game {
-  width: 30%;
+  width: 25%;
   height: 26px;
   margin-top: 5px;
   text-transform: none;
   background-color: rgb(3, 204, 207);
   text-align: center;
   line-height: 26px;
-  border-top-left-radius: 15% 50%;
-  border-bottom-left-radius: 15% 50%;
-  border-top-right-radius: 15% 50%;
-  border-bottom-right-radius: 15% 50%;
+  border-top-left-radius: 20% 50%;
+  border-bottom-left-radius: 20% 50%;
+  border-top-right-radius: 20% 50%;
+  border-bottom-right-radius: 20% 50%;
   transition: all 0.7s;
 }
 
@@ -88,13 +89,13 @@ body.night {
 .left {
   height: 26px;
   margin-top: 5px;
-  width: 30%;
+  width: 25%;
   text-align: center;
   line-height: 26px;
-  border-top-left-radius: 15% 50%;
-  border-bottom-left-radius: 15% 50%;
-  border-top-right-radius: 15% 50%;
-  border-bottom-right-radius: 15% 50%;
+  border-top-left-radius: 20% 50%;
+  border-bottom-left-radius: 20% 50%;
+  border-top-right-radius: 20% 50%;
+  border-bottom-right-radius: 20% 50%;
   transition: all 0.7s;
 }
 
@@ -102,7 +103,21 @@ body.night {
   background-color: red;
   font-weight: bold;
 }
-
+.sound {
+  margin-top: 4px;
+  width: 28px;
+  height: 28px;
+  background-image: url("../assets/img/sound.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  transition: all 0.5s;
+  opacity: 0.6;
+}
+.sound.active {
+  margin-top: 1px;
+  border: 3px solid rgb(4, 100, 177);
+  opacity: 1;
+}
 .timer,
 .moves {
   width: 30%;
