@@ -159,22 +159,22 @@ targetFields.forEach(function (element) {
     if (!this.classList.contains("block") && !document.querySelector(".gameover").classList.contains("active")) {
       if(!this.classList.contains("open")) {
         moves += 1;
+        if (moves == 1) {
+          buildMatrix(level, document.querySelector("input").value, codeButton);
+          targetFields.forEach(function (element) {
+            let idElem = element.getAttribute('data').split('-');
+            if (koefs[idElem[0]][idElem[1]] > 0 && matrix[idElem[0]][idElem[1]] != 10) {
+              element.textContent = koefs[idElem[0]][idElem[1]];
+            } else {
+              element.textContent = '';
+            }
+            colorNum(koefs, idElem[0], idElem[1]);
+          })
+          startTimer();
+        }
       }
       document.querySelector(".moves").textContent = moves + ' moves';
-      if (moves == 1) {
-        buildMatrix(level, document.querySelector("input").value, codeButton);
-        targetFields.forEach(function (element) {
-          let idElem = element.getAttribute('data').split('-');
-          if (koefs[idElem[0]][idElem[1]] > 0 && matrix[idElem[0]][idElem[1]] != 10) {
-            element.textContent = koefs[idElem[0]][idElem[1]];
-          } else {
-            element.textContent = '';
-          }
-          colorNum(koefs, idElem[0], idElem[1]);
-        })
-
-        startTimer();
-      }
+      
       if (matrix[codeButton[0]][codeButton[1]] == 10) {
         this.classList.add("danger");
         stopTimer();
