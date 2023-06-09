@@ -3,6 +3,7 @@
   "extends": [
     "airbnb-base",
     "airbnb-typescript/base",
+    "@babel/core",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended"

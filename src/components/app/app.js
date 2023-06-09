@@ -1,5 +1,5 @@
 import AppController from '../controller/controller.js';
-import { AppView } from '../view/appView.js';
+import AppView from '../view/appView.js';
 
 class App {
   constructor() {
