@@ -1,23 +1,26 @@
 import AppLoader from './appLoader.js';
+import { IData } from '../app/appTypes.js';
+
+type CallbackType<T> = (data?: T) => void;
 
 class AppController extends AppLoader {
-  getSources(callback) {
+  getSources(callback: CallbackType<IData>) {
     super.getResp(
       {
         endpoint: 'sources',
       },
-      callback,
+      callback
     );
   }
 
-  getNews(e, callback) {
-    let target = e.target;
-    const newsContainer = e.currentTarget;
+  getNews(e: Event, callback: CallbackType<IData>) {
+    let target = e.target as HTMLElement;
+    const newsContainer = e.currentTarget as HTMLElement;
 
     while (target !== newsContainer) {
       if (target.classList.contains('source__item')) {
-        const sourceId = target.getAttribute('data-source-id');
-        if (newsContainer.getAttribute('data-source') !== sourceId) {
+        const sourceId = target.getAttribute('data-source-id') as string | null;
+        if (newsContainer.getAttribute('data-source') !== sourceId && sourceId !== null) {
           newsContainer.setAttribute('data-source', sourceId);
           super.getResp(
             {
@@ -26,12 +29,12 @@ class AppController extends AppLoader {
                 sources: sourceId,
               },
             },
-            callback,
+            callback
           );
         }
         return;
       }
-      target = target.parentNode;
+      target = target.parentNode as HTMLElement;
     }
   }
 }
