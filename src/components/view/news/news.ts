@@ -1,14 +1,16 @@
 import './news.css';
+import { IData } from '../../app/appTypes.js';
 
 class News {
   draw(data) {
-    const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+    // data?: IData   тогда ошибки лезут в app.ts
+    const news = data.length >= 10 ? data.filter((_item: HTMLElement, idx: number) => idx < 10) : data;
 
     const fragment = document.createDocumentFragment();
-    const newsItemTemp = document.querySelector('#newsItemTemp');
+    const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLElement; //HTMLTemplateElement тогда куча ошибок по другим строчкам по Ноде
 
-    news.forEach((item, idx) => {
-      const newsClone = newsItemTemp.content.cloneNode(true);
+    news.forEach((item, idx: number) => {
+      const newsClone = newsItemTemp.content.cloneNode(true); // пропадает ошибка с HTMLTemplateElement но см.выше
 
       if (idx % 2) newsClone.querySelector('.news__item').classList.add('alt');
 
@@ -30,8 +32,8 @@ class News {
       fragment.append(newsClone);
     });
 
-    document.querySelector('.news').innerHTML = '';
-    document.querySelector('.news').appendChild(fragment);
+    (document.querySelector('.news') as HTMLElement).innerHTML = '';
+    (document.querySelector('.news') as HTMLElement).appendChild(fragment);
   }
 }
 
