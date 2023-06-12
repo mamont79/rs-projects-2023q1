@@ -1,13 +1,8 @@
 const path = require('path');
-// import path from 'path';
 const { merge } = require('webpack-merge');
-// import { merge } from 'webpack-merge';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 const ESLintPlugin = require('eslint-webpack-plugin');
-// import EslingPlugin from 'eslint-webpack-plugin';
 
 const baseConfig = {
   entry: path.resolve(__dirname, './src/index'),
