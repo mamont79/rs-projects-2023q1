@@ -6,7 +6,7 @@ export interface IArticle {
 export interface ISource {
   id: string;
   name: string;
-  sources: Array<ISource>;
+  // sources: Array<ISource>;
 }
 
 // export interface IData {
@@ -18,10 +18,13 @@ export interface INewsData {
   articles: Array<IArticle>;
   sources: Array<ISource>;
   source: { name: string };
+  // id: string;
+  // name: string;
   urlToImage: string;
   author: string;
   publishedAt: string;
   title: string;
   description: string;
   url: string;
+  category: string;
 }

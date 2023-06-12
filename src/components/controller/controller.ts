@@ -1,5 +1,5 @@
 import AppLoader from './appLoader.js';
-import { INewsData } from '../../types/app.types.js';
+import { INewsData } from '../../types/index.js';
 
 type CallbackType<T> = (data?: T) => void;
 
