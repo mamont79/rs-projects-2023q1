@@ -1,4 +1,4 @@
-import { INewsData, ISource } from '../../../types/index.js';
+import { ISource } from '../../../types/index.js';
 import './sources.css';
 
 class Sources {
