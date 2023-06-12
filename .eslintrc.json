@@ -4,6 +4,7 @@
     "airbnb-base",
     "airbnb-typescript/base",
     "@babel/core",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended"
@@ -26,7 +27,7 @@
     "no-console": 0,
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
-    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-explicit-any": 2,
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/array-type": [
       "error",

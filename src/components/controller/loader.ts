@@ -1,4 +1,4 @@
-import { IData } from '../app/appTypes.js';
+import { INewsData } from '../../types/app.types.js';
 
 interface OptionLoader {
   [key: string]: string;
@@ -42,7 +42,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint: string, callback: (data?: IData) => void, options = {}) {
+  load(method: string, endpoint: string, callback: (data?: INewsData) => void, options = {}) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())
