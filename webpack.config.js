@@ -5,24 +5,27 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-  entry: path.resolve(__dirname, './src/index'),
+  entry: './src/index.ts',
   mode: 'development',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.ts/i,
+        test: /\.tsx?$/,
+        //test: /\.ts/i,
         use: 'ts-loader',
-      },
-      {
-        test: /\.m?js$/,
         exclude: /node-modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [['@babel/preset-env', { targets: 'defaults' }]],
-          },
-        },
       },
+      // {
+      //   test: /\.m?js$/,
+      //   exclude: /node-modules/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: [['@babel/preset-env', { targets: 'defaults' }]],
+      //     },
+      //   },
+      // },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -30,7 +33,7 @@ const baseConfig = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'index.js',

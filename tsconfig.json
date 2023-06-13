@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    //"module": "commonjs",
+    "module": "commonjs",
+    "sourceMap": true,
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "outDir": "./built",
+    "outDir": "./dist",
     "allowUnreachableCode": false,
     //"noImplicitReturns": true,
     "typeRoots": ["./typings"]
