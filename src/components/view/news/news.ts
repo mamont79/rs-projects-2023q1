@@ -1,7 +1,8 @@
 import './news.css';
-import { INewsArticle } from '../../../types/index.js';
+import { INewsArticle } from '../../../types/index';
 
 class News {
+  // eslint-disable-next-line class-methods-use-this
   draw(data: INewsArticle[]) {
     const news = data.length >= 10 ? data.filter((_item, idx: number) => idx < 10) : data;
 

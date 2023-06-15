@@ -1,5 +1,5 @@
-import AppLoader from './appLoader.js';
-import { INewsResp, ISourceResp } from '../../types/index.js';
+import AppLoader from './appLoader';
+import { INewsResp, ISourceResp } from '../../types/index';
 
 type CallbackType<T> = (data?: T) => void;
 

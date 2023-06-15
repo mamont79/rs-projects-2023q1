@@ -1,4 +1,4 @@
-import { INewsArticle } from '../../types/index.js';
+import { INewsArticle } from '../../types/index';
 
 interface OptionLoader {
   [key: string]: string;
@@ -6,7 +6,9 @@ interface OptionLoader {
 
 class Loader {
   baseLink: string;
+
   options: OptionLoader;
+
   constructor(baseLink: string, options: OptionLoader) {
     this.baseLink = baseLink;
     this.options = options;
@@ -15,15 +17,18 @@ class Loader {
   getResp(
     { endpoint = '', options = {} },
     callback = () => {
+      // eslint-disable-next-line no-console
       console.error('No callback for GET response');
     }
   ) {
     this.load('GET', endpoint, callback, options);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   errorHandler(res: Response) {
     if (!res.ok) {
       if (res.status === 401 || res.status === 404)
+        // eslint-disable-next-line no-console
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
       throw Error(res.statusText);
     }
@@ -47,6 +52,7 @@ class Loader {
       .then(this.errorHandler)
       .then((res) => res.json())
       .then((data) => callback(data))
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }
 }

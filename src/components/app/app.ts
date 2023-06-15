@@ -1,10 +1,12 @@
-import AppController from '../controller/controller.js';
-import AppView from '../view/appView.js';
-import { INewsResp, ISourceResp } from '../../types/index.js';
+import AppController from '../controller/controller';
+import { AppView } from '../view/appView';
+import { INewsResp, ISourceResp } from '../../types/index';
 
 class App {
   controller: AppController;
+
   view: AppView;
+
   constructor() {
     this.controller = new AppController();
     this.view = new AppView();

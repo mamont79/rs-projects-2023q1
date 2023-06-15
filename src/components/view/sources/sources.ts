@@ -1,7 +1,8 @@
-import { ISource } from '../../../types/index.js';
+import { ISource } from '../../../types/index';
 import './sources.css';
 
 class Sources {
+  // eslint-disable-next-line class-methods-use-this
   draw(data: ISource[]) {
     const fragment = document.createDocumentFragment();
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;

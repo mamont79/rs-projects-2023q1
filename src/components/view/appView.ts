@@ -1,9 +1,10 @@
-import News from './news/news.js';
-import Sources from './sources/sources.js';
-import { INewsResp, ISourceResp } from '../../types/index.js';
+import News from './news/news';
+import Sources from './sources/sources';
+import { INewsResp, ISourceResp } from '../../types/index';
 
 export class AppView {
   news: News;
+
   sources: Sources;
 
   constructor() {
