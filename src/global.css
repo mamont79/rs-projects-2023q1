@@ -41,12 +41,14 @@ footer .copyright:before {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  opacity: 0.7;
   cursor: pointer;
   transition: all 0.4s;
 }
 .gh-icon {
   width: 32px;
   height: 32px;
+  opacity: 0.7;
   transition: all 0.4s;
 }
 
@@ -58,6 +60,8 @@ footer .copyright:before {
 }
 
 .footer-rss {
+  opacity: 0.7;
+  transition: all 0.4s;
   cursor: pointer;
 }
 .footer-rss:hover,

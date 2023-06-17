@@ -8,12 +8,16 @@ export interface ISource {
   name: string;
 }
 
-export type ISourceResp = {
+export interface OptionLoader {
+  [key: string]: string;
+}
+
+export type ISourceResponse = {
   status: string;
   sources: ISourceItem[];
 };
 
-export type INewsResp = {
+export type INewsResponse = {
   status: string;
   total: number;
   articles: INewsArticle[];
@@ -30,7 +34,9 @@ export type INewsArticle = {
   content: string;
 };
 
-export type ISourceRespObj = Pick<ISourceItem, 'id' | 'name'>;
+export type CallbackType<T> = (data?: T) => void;
+
+export type ISourceResponseObject = Pick<ISourceItem, 'id' | 'name'>;
 
 export type ISourceItem = {
   category: string;
@@ -41,21 +47,3 @@ export type ISourceItem = {
   language: string;
   url: string;
 };
-
-// export interface IData {
-//   articles: Array<IArticle>;
-//   sources: Array<ISource>;
-// }
-
-// export interface INewsData {
-//   articles: Array<IArticle>;
-//   sources: Array<ISource>;
-//   source: { name: string };
-//   urlToImage: string;
-//   author: string;
-//   publishedAt: string;
-//   title: string;
-//   description: string;
-//   url: string;
-//   category: string;
-// }

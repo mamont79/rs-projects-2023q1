@@ -11,21 +11,10 @@ const baseConfig = {
   module: {
     rules: [
       {
-        // test: /\.tsx?$/,
         test: /\.ts/i,
         use: 'ts-loader',
         exclude: /node-modules/,
       },
-      // {
-      //   test: /\.m?js$/,
-      //   exclude: /node-modules/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: [['@babel/preset-env', { targets: 'defaults' }]],
-      //     },
-      //   },
-      // },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],

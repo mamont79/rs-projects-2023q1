@@ -1,8 +1,4 @@
-import { INewsArticle } from '../../types/index';
-
-interface OptionLoader {
-  [key: string]: string;
-}
+import { INewsArticle, OptionLoader } from '../../types/index';
 
 class Loader {
   baseLink: string;
