@@ -38,6 +38,7 @@ body {
   height: 90px;
   /* border: 2px solid rgb(154, 246, 241); */
 }
+
 .baloon-red {
   width: 70px;
   height: 70px;
@@ -46,7 +47,11 @@ body {
   transform: rotateZ(45deg);
 }
 .baloon {
+  transition: all 0.3s;
   animation: baloon-anim 1s infinite alternate;
+}
+.baloon:hover {
+  box-shadow: 0px 0px 15px rgb(114, 72, 95);
 }
 @keyframes baloon-anim {
   from {
@@ -54,8 +59,8 @@ body {
     height: 70px;
   }
   to {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
   }
 }
 
