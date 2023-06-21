@@ -1,0 +1,99 @@
+body {
+  background: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.left-side {
+  width: 70%;
+  height: 100vh;
+}
+
+.baloon-shooter {
+  width: 200px;
+}
+
+.right-side {
+  color: aliceblue;
+  background: rgb(63, 62, 62);
+  width: 30%;
+  height: 100vh;
+}
+
+.level-title {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 2em;
+}
+.level-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+}
+
+.level {
+  display: inline-block;
+  padding-left: 20px;
+  width: calc(100% - 20px);
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  font-size: 1.3em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.level:hover {
+  background: rgb(105, 105, 105);
+}
+
+.checkmark,
+.level-number {
+  margin-right: 10px;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  opacity: 0.55;
+  border: solid 3px #888888;
+  border-width: 0 3px 3px 0;
+  width: 8px;
+  height: 20px;
+  transform: rotate(40deg);
+}
+.checkmark.checked {
+  opacity: 1;
+  border: solid 3px #4cbb4a;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.help,
+.reset {
+  margin: 10px auto;
+  text-align: center;
+  background: rgb(50, 50, 50);
+  color: whitesmoke;
+  line-height: 2em;
+  width: 70%;
+  height: 2em;
+  border: 2px solid rgb(200, 199, 199);
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.help:hover,
+.reset:hover {
+  background: rgb(105, 105, 105);
+}
