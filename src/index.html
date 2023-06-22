@@ -14,20 +14,20 @@
     <title>CSS-Selectors</title>
   </head>
   <body class="wrapper">
-    <div class="left-side">
+    <main class="left-side">
       <h1 class="task-title">csShoot all baloons</h1>
-      <div class="baloons-place">
-        <img src="./img/archer-man.png" class="baloon-shooter" alt="biatlon shooter" />
+      <section class="baloons-place">
+        <img src="./assets/archer-man.png" class="baloon-shooter" alt="biatlon shooter" />
         <div class="baloons">
-          <div class="baloon baloon-red" title="&lt;baloon-red&gt;&lt;/baloon-red&gt;">
+          <div class="baloon baloon-red" title="&lt;baloon-blue&gt;&lt;/baloon-red&gt;">
             <div class="baloon-blick"></div>
           </div>
-          <div class="baloon baloon-red" title="&lt;baloon-red&gt;&lt;/baloon-red&gt;">
+          <div class="baloon baloon-red" title="&lt;baloon-blue&gt;&lt;/baloon-red&gt;">
             <div class="baloon-blick"></div>
           </div>
         </div>
-      </div>
-      <div class="work-place-pc">
+      </section>
+      <section class="work-place-pc">
         <div class="work-place">
           <div class="work-place-desc">
             <div class="work-place-title">
@@ -62,7 +62,7 @@
             <div class="input-area">
               <div class="input-row">
                 <input type="text" class="answer-input" placeholder="Type here CSS selector" />
-                <button class="enter-button">Enter</button>
+                <button class="enter-button">FIRE</button>
               </div>
               <p class="string-description">{</p>
               <p class="string-description">/* Styles would go here. */</p>
@@ -95,8 +95,8 @@
             </div>
             <div class="code-area">
               <p class="string-description string-code" id="row-1">&lt;div class="baloons"&gt;</p>
-              <p class="string-description string-code" id="row-2">&nbsp;&nbsp; &lt;baloon-red /&gt;</p>
-              <p class="string-description string-code" id="row-3">&nbsp;&nbsp; &lt;baloon-red /&gt;</p>
+              <p class="string-description string-code" id="row-2">&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>
+              <p class="string-description string-code" id="row-3">&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>
               <p class="string-description string-code" id="row-4">&lt;/div&gt;</p>
               <p class="string-description string-code" id="row-5"></p>
               <p class="string-description string-code" id="row-6"></p>
@@ -114,7 +114,7 @@
         </div>
         <div class="pc-holder"></div>
         <div class="pc-foot"></div>
-      </div>
+      </section>
 
       <footer class="footer">
         <a class="footer-rss" href="https://rs.school/">RS School - 2023</a>
@@ -122,37 +122,37 @@
           Made by <a href="https://github.com/mamont79" class="github-link">@Pavel Dalhou</a>
         </div>
       </footer>
-    </div>
+    </main>
 
-    <div class="right-side">
+    <aside class="nav-bar">
       <h2 class="level-title">Choose a level:</h2>
       <div class="level-list">
-        <a class="level" id="1">
+        <div class="level" id="1">
           <span class="checkmark"></span>
           <span class="level-number">1</span>
           A
-        </a>
-        <a class="level" id="2">
+        </div>
+        <div class="level" id="2">
           <span class="checkmark"></span>
           <span class="level-number">2</span>
           #id
-        </a>
-        <a class="level" id="3">
+        </div>
+        <div class="level" id="3">
           <span class="checkmark"></span>
           <span class="level-number">3</span>
           .classname
-        </a>
-        <a class="level" id="4">
+        </div>
+        <div class="level" id="4">
           <span class="checkmark"></span>
           <span class="level-number">4</span>
           :first-child
-        </a>
+        </div>
       </div>
-      <div class="buttons">
-        <div class="help">Help</div>
-        <div class="reset">Reset Progress</div>
+      <div class="control-buttons">
+        <button class="help">Help</button>
+        <button class="reset">Reset Progress</button>
       </div>
-    </div>
+    </aside>
 
     <script src="./index.js"></script>
   </body>

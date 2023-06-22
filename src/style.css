@@ -36,7 +36,7 @@ body {
   gap: 20px;
   width: 70%;
   height: 90px;
-  background-image: url('./img/cloud.png');
+  background-image: url('./assets/cloud.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   opacity: 0.7;
@@ -244,7 +244,7 @@ body {
   color: #bebebe;
 }
 
-.right-side {
+.nav-bar {
   color: aliceblue;
   background: rgb(63, 62, 62);
   width: 30%;
@@ -298,7 +298,7 @@ body {
   border: solid 3px #4cbb4a;
 }
 
-.buttons {
+.control-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -313,7 +313,6 @@ body {
   text-align: center;
   background: rgb(50, 50, 50);
   color: whitesmoke;
-  line-height: 2em;
   width: 70%;
   height: 2em;
   border: 2px solid rgb(200, 199, 199);
