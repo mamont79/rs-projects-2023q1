@@ -20,9 +20,15 @@ const baseConfig = {
         use: ['style-loader', 'css-loader'],
       },
     ],
+    loaders: [
+      {
+        test: /\.(gif|svg|jpg|png)$/,
+        loader: 'file-loader',
+      },
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'index.js',
