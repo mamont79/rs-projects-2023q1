@@ -63,6 +63,16 @@ body {
     height: 75px;
   }
 }
+.baloon-blick {
+  position: relative;
+  width: 25%;
+  height: 20%;
+  top: 10px;
+  right: -35px;
+  background-color: azure;
+  opacity: 0.8;
+  border-radius: 100% 100% 50% 50%;
+}
 
 .work-place-pc {
   margin: 0 auto;
