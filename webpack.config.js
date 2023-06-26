@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-  entry: './src/index',
+  entry: './src/index.ts',
   mode: 'development',
   devtool: 'inline-source-map',
   module: {
@@ -18,12 +18,6 @@ const baseConfig = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      },
-    ],
-    loaders: [
-      {
-        test: /\.(gif|svg|jpg|png)$/,
-        loader: 'file-loader',
       },
     ],
   },
