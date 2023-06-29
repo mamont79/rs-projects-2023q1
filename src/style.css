@@ -69,6 +69,10 @@ body {
   width: 100px;
   height: 120px;
   transform: scale(-1, 1);
+  background-image: url('./assets/archer-man.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }
 .baloons {
   display: flex;
@@ -77,10 +81,10 @@ body {
   gap: 20px;
   width: 70%;
   height: 90px;
-  /* background-image: url('./assets/cloud.png'); */
-  /* background-size: 100% 100%;
+  background-image: url('./assets/cloud.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  opacity: 0.7; */
+  opacity: 0.7;
 }
 .cloud {
   position: relative;

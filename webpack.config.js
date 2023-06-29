@@ -20,13 +20,13 @@ const baseConfig = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpeg|png|gif|jpg)$/,
         use: [
+          'file-loader',
           {
-            loader: 'file-loader',
+            loader: 'image-webpack-loader',
             options: {
-              name: '[name].[ext]',
-              output: '../dist/assets/',
+              name: '../dist/assets/[name].[ext]',
             },
           },
         ],
