@@ -19,6 +19,18 @@ const baseConfig = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              output: '../dist/assets/',
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
