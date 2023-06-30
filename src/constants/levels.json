@@ -1,0 +1,78 @@
+[
+  {
+    "level": 1,
+    "task": "A",
+    "baloons": ["baloon-blue", "baloon-blue"],
+    "status": [true, true],
+    "descript": ["<baloon-blue />", "<baloon-blue />"],
+    "id": ["blue", "blue"],
+    "answers": ["baloon-blue", ".baloon-blue"],
+    "help": ""
+  },
+  {
+    "level": 2,
+    "task": "#id",
+    "baloons": ["baloon-blue", "baloon-red"],
+    "status": [false, true],
+    "descript": ["<baloon-blue />", "<baloon-red />"],
+    "id": ["blue", "red"]
+  },
+  {
+    "level": 3,
+    "task": ".classname",
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green />", "<baloon-red />", "<baloon-green />"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 4,
+    "task": ":first-child",
+    "baloons": ["baloon-green", "baloon-red", "baloon-blue"],
+    "status": [true, false, false],
+    "descript": ["<baloon-green />", "<baloon-red />", "<baloon-blue />"],
+    "id": ["green", "red", "blue"]
+  },
+  {
+    "level": 5,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 6,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 7,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 8,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 9,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  },
+  {
+    "level": 10,
+    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
+    "status": [false, true, true],
+    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
+    "id": ["green", "red", "green"]
+  }
+]

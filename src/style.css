@@ -76,7 +76,7 @@ body {
 }
 .baloons {
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 20px;
   width: 70%;
@@ -92,10 +92,40 @@ body {
   height: 100%;
 }
 
-.baloon-red {
+.baloon-blue {
   width: 70px;
   height: 70px;
   background-color: rgb(119, 161, 252);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+}
+.baloon-red {
+  width: 70px;
+  height: 70px;
+  background: rgb(240, 83, 83);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+}
+.baloon-green {
+  width: 70px;
+  height: 70px;
+  background: rgb(62, 247, 59);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+}
+.baloon-small {
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+  background: rgb(254, 164, 47);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+}
+.baloon-big {
+  width: 90px;
+  height: 90px;
+  margin-top: -10px;
+  background: rgb(110, 254, 168);
   border-radius: 100% 100% 0% 100%;
   transform: rotateZ(45deg);
 }
@@ -109,12 +139,10 @@ body {
 }
 @keyframes baloon-anim {
   from {
-    width: 70px;
-    height: 70px;
+    transform: scale(1) rotateZ(45deg);
   }
   to {
-    width: 75px;
-    height: 75px;
+    transform: scale(1.1) rotateZ(45deg);
   }
 }
 .baloon-blick {
@@ -122,7 +150,7 @@ body {
   width: 25%;
   height: 20%;
   top: 10px;
-  right: -35px;
+  right: -25px;
   background-color: azure;
   opacity: 0.8;
   border-radius: 100% 100% 50% 50%;
