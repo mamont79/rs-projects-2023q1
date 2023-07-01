@@ -35,6 +35,7 @@
   },
   {
     "level": 5,
+    "task": ":last-child",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
@@ -42,6 +43,7 @@
   },
   {
     "level": 6,
+    "task": "A.classname",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
@@ -49,6 +51,7 @@
   },
   {
     "level": 7,
+    "task": "#id A",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
@@ -56,6 +59,7 @@
   },
   {
     "level": 8,
+    "task": "*",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
@@ -63,6 +67,7 @@
   },
   {
     "level": 9,
+    "task": "A *",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
@@ -70,6 +75,7 @@
   },
   {
     "level": 10,
+    "task": "A, B",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
     "status": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],

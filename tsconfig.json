@@ -11,6 +11,8 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "allowUnreachableCode": false,
-    "typeRoots": ["./typings"]
+    "typeRoots": ["./typings"],
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
   }
 }

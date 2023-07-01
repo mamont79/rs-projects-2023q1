@@ -52,10 +52,24 @@ body {
   width: 70%;
   height: 100vh;
 }
+.show-mistake {
+  display: none;
+  font-size: 2.2em;
+  color: rgb(244, 23, 23);
+  text-align: center;
+  transition: all 0.5s;
+}
+.show-mistake.active {
+  display: block;
+}
 .task-title {
   font-size: 2.2em;
   color: rgb(59, 59, 59);
   text-align: center;
+  transition: all 0.5s;
+}
+.task-title.hide {
+  display: none;
 }
 .baloons-place {
   display: flex;
@@ -201,7 +215,7 @@ body {
   flex-wrap: nowrap;
   width: calc(50% - 2px);
   height: calc(93% - 4px);
-  background-color: rgb(153, 154, 154);
+  background-color: rgb(211, 211, 211);
   border: 1px solid azure;
 }
 .string-numeric {
@@ -259,10 +273,10 @@ body {
 }
 @keyframes input-anim {
   from {
-    background-color: rgb(145, 145, 145);
+    background-color: rgb(222, 222, 222);
   }
   to {
-    background-color: rgb(169, 169, 169);
+    background-color: rgb(197, 197, 197);
   }
 }
 .enter-button {
@@ -380,6 +394,7 @@ body {
 .checkmark.checked {
   opacity: 1;
   border: solid 3px #4cbb4a;
+  border-width: 0 3px 3px 0;
 }
 
 .control-buttons {
