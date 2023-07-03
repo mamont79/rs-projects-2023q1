@@ -1,30 +1,54 @@
 import './style.css';
-import levelData from '../../constants/levels.json';
+import * as levelData from './constants/levels.json';
 // import { ILevelLine } from '../../types/index';
 
-const getAnswer = document.querySelector('answer-input') as HTMLElement;
-const mistake = document.querySelector('.show-mistake') as HTMLElement;
-const title = document.querySelector('.task-title') as HTMLElement;
+const answerInput = document.getElementById('check-answer') as HTMLElement;
+const mistakeMessage = document.querySelector('.show-mistake') as HTMLElement;
+const taskTitle = document.querySelector('.task-title') as HTMLElement;
 
+const codeArea = document.querySelector('.code-area') as HTMLElement;
+const levelList = document.querySelector('.level-list') as HTMLElement;
+
+let currentLevel: number;
 // getAnswer.addEventListener('onenter')
 
-function shootBaloon() {}
-function getMistake() {
-  mistake.classList.add('active');
-  title.classList.add('hide');
+const initApp = () => {
+  currentLevel = 0;
+};
+
+initApp();
+
+const levelHandler = (level?: number) => {
+  if (level) currentLevel = level;
+  else currentLevel += 1;
+  codeArea.textContent = `${levelData[0].id}`;
+};
+
+levelList.addEventListener('click', (event) => {
+  if ((event.target as HTMLElement).classList.contains('level')) {
+    const levelId = Number((event.target as HTMLElement).id);
+    levelHandler(levelId);
+  }
+});
+
+const finishLevel = () => {};
+const showMistake = () => {
+  mistakeMessage.classList.add('active');
+  taskTitle.classList.add('hide');
   setTimeout(() => {
-    mistake.classList.remove('active');
-    title.classList.remove('hide');
+    mistakeMessage.classList.remove('active');
+    taskTitle.classList.remove('hide');
   }, 2000);
-}
+};
 
 document.addEventListener('keyup', (event) => {
   if (event.code === 'Enter') {
-    const answer = getAnswer.textContent as string;
-    if (answer in levelData[1].answers) {
-      shootBaloon();
+    const answer = answerInput.textContent as string;
+    if (levelData[currentLevel].answers?.includes(answer)) {
+      finishLevel();
+      currentLevel += 1;
     } else {
-      getMistake();
+      showMistake();
     }
   }
 });

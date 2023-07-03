@@ -1,83 +1,136 @@
 [
   {
     "level": 1,
-    "task": "A",
-    "baloons": ["baloon-blue", "baloon-blue"],
-    "status": [true, true],
-    "descript": ["<baloon-blue />", "<baloon-blue />"],
-    "id": ["blue", "blue"],
+    "shortTitle": "A",
+    "taskTitle": "CSShoot all baloons",
+    "baloonsData": [
+      {
+        "id": "blueAct",
+        "animation": true,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "blueAct",
+        "animation": true,
+        "titleAttribite": "<baloon-blue />"
+      }
+    ],
     "answers": ["baloon-blue", ".baloon-blue"],
     "help": ""
   },
   {
     "level": 2,
-    "task": "#id",
-    "baloons": ["baloon-blue", "baloon-red"],
-    "status": [false, true],
-    "descript": ["<baloon-blue />", "<baloon-red />"],
-    "id": ["blue", "red"]
+    "shortTitle": "#id",
+    "taskTitle": "CSShoot red baloon",
+    "baloonsData": [
+      {
+        "id": "blue",
+        "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "redAct",
+        "animation": true,
+        "titleAttribite": "<baloon-red />"
+      }
+    ],
+    "answers": [".baloon-red"],
+    "help": ""
   },
   {
     "level": 3,
-    "task": ".classname",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
-    "descript": ["<baloon-green />", "<baloon-red />", "<baloon-green />"],
-    "id": ["green", "red", "green"]
+    "shortTitle": ".classname",
+    "taskTitle": "CSShoot class baloon-green",
+    "baloonsData": [
+      {
+        "id": "blue",
+        "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "greenAct",
+        "animation": true,
+        "titleAttribite": "<baloon-green />",
+        "class": "baloon-green baloon"
+      },
+      {
+        "id": "blue",
+        "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      }
+    ],
+    "answers": [".baloon-green"],
+    "help": ""
   },
   {
     "level": 4,
-    "task": ":first-child",
-    "baloons": ["baloon-green", "baloon-red", "baloon-blue"],
-    "status": [true, false, false],
-    "descript": ["<baloon-green />", "<baloon-red />", "<baloon-blue />"],
-    "id": ["green", "red", "blue"]
+    "shortTitle": ":first-child",
+    "taskTitle": "CSShoot first baloon-green",
+    "baloonsData": [
+      {
+        "id": "blue",
+        "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "greenAct",
+        "animation": true,
+        "titleAttribite": "<baloon-green />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      }
+    ],
+    "answers": [".baloon-red"],
+    "help": ""
   },
   {
     "level": 5,
-    "task": ":last-child",
+    "shortTitle": ":last-child",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   },
   {
     "level": 6,
-    "task": "A.classname",
+    "shortTitle": "A.classname",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   },
   {
     "level": 7,
-    "task": "#id A",
+    "shortTitle": "#id A",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   },
   {
     "level": 8,
-    "task": "*",
+    "shortTitle": "*",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   },
   {
     "level": 9,
-    "task": "A *",
+    "shortTitle": "A *",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   },
   {
     "level": 10,
-    "task": "A, B",
+    "shortTitle": "A, B",
     "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "status": [false, true, true],
+    "animation": [false, true, true],
     "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
     "id": ["green", "red", "green"]
   }

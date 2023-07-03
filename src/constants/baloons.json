@@ -1,9 +1,12 @@
-[
-  {
-    "blue": "<div class='baloon-blue' title='&lt;baloon-blue&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
-    "red": "<div class='baloon-red' title='&lt;baloon-red&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
-    "green": "<div class='baloon-green' title='&lt;baloon-green&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
-    "big": "<div class='baloon-big' title='&lt;baloon-big&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
-    "small": "<div class='baloon-small' title='&lt;baloon-small&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>"
-  }
-]
+{
+  "blue": "<div class='baloon-blue' title='&lt;baloon-blue&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "red": "<div class='baloon-re' title='&lt;baloon-red&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "green": "<div class='baloon-green' title='&lt;baloon-green&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "big": "<div class='baloon-big' title='&lt;baloon-big&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "small": "<div class='baloon-small' title='&lt;baloon-small&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "blueAct": "<div class='baloon-blue baloon' title='&lt;baloon-blue&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "redAct": "<div class='baloon-red baloon' title='&lt;baloon-red&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "greenAct": "<div class='baloon-green baloon' title='&lt;baloon-green&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "bigAct": "<div class='baloon-big baloon' title='&lt;baloon-big&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>",
+  "smallAct": "<div class='baloon-small baloon' title='&lt;baloon-small&gt;&lt;/baloon-red&gt;'><div class='baloon-blick'></div></div>"
+}
