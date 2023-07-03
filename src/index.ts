@@ -89,7 +89,7 @@ document.addEventListener('keyup', (event) => {
     if (levelData[currentLevel].answers?.includes(answer)) {
       finishLevel();
       currentLevel += 1;
-      levelHandler(currentLevel);
+      // levelHandler(currentLevel);
     } else {
       showMistake();
     }
