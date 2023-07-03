@@ -8,7 +8,7 @@ interface ICodeOfBaloon {
 }
 
 const codeOfBaloons: ICodeOfBaloon = baloonsCode;
-const answerInput = document.getElementById('check-answer') as HTMLElement;
+const answerInput = document.getElementById('check-answer') as HTMLInputElement;
 const mistakeMessage = document.querySelector('.show-mistake') as HTMLElement;
 
 const taskTitle = document.querySelector('.task-title') as HTMLElement;
@@ -56,7 +56,24 @@ levelList.addEventListener('click', (event) => {
   }
 });
 
-const finishLevel = () => {};
+const shootBaloon = () => {
+  document.querySelectorAll('.baloon').forEach((element) => {
+    element.classList.remove('baloon');
+    element.classList.add('shooted');
+  });
+};
+
+const finishLevel = () => {
+  shootBaloon();
+};
+
+// const markLevelComplite = (level: number) => {
+//   const currentTask = document.getElementById(String(level));
+//   currentTask?.forEach((element) => {
+//     element.classList.add('checked');
+//   });
+// };
+
 const showMistake = () => {
   mistakeMessage.classList.add('active');
   taskTitle.classList.add('hide');
@@ -68,10 +85,11 @@ const showMistake = () => {
 
 document.addEventListener('keyup', (event) => {
   if (event.code === 'Enter') {
-    const answer = answerInput.textContent as string;
+    const answer = answerInput.value as string;
     if (levelData[currentLevel].answers?.includes(answer)) {
       finishLevel();
       currentLevel += 1;
+      levelHandler(currentLevel);
     } else {
       showMistake();
     }
