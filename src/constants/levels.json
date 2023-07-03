@@ -16,7 +16,8 @@
       }
     ],
     "answers": ["baloon-blue", ".baloon-blue"],
-    "help": ""
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 2,
@@ -26,16 +27,17 @@
       {
         "id": "blue",
         "animation": false,
-        "titleAttribite": "<baloon-blue />"
+        "titleAttribite": "<baloon-blue id='baloon-blue'/>"
       },
       {
         "id": "redAct",
         "animation": true,
-        "titleAttribite": "<baloon-red />"
+        "titleAttribite": "<baloon-red id='baloon-red'/>"
       }
     ],
-    "answers": [".baloon-red"],
-    "help": ""
+    "answers": ["baloon-red", "#baloon-red"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 3,
@@ -60,7 +62,8 @@
       }
     ],
     "answers": [".baloon-green"],
-    "help": ""
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 4,
@@ -84,7 +87,7 @@
       }
     ],
     "answers": [".baloon-red"],
-    "help": ""
+    "help": "dd"
   },
   {
     "level": 5,

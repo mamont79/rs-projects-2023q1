@@ -1,16 +1,23 @@
 import './style.css';
 import * as levelData from './constants/levels.json';
-// import { ILevelLine } from '../../types/index';
+import * as baloonsCode from './constants/baloons.json';
+// import { ParamData, ITasksData } from './types/index';
 
+interface ICodeOfBaloon {
+  [key: string]: string;
+}
+
+const codeOfBaloons: ICodeOfBaloon = baloonsCode;
 const answerInput = document.getElementById('check-answer') as HTMLElement;
 const mistakeMessage = document.querySelector('.show-mistake') as HTMLElement;
-const taskTitle = document.querySelector('.task-title') as HTMLElement;
 
+const taskTitle = document.querySelector('.task-title') as HTMLElement;
 const codeArea = document.querySelector('.code-area') as HTMLElement;
+const baloonArea = document.querySelector('.baloons') as HTMLElement;
+
 const levelList = document.querySelector('.level-list') as HTMLElement;
 
 let currentLevel: number;
-// getAnswer.addEventListener('onenter')
 
 const initApp = () => {
   currentLevel = 0;
@@ -18,16 +25,34 @@ const initApp = () => {
 
 initApp();
 
+const buildBaloon = (level: number) => {
+  baloonArea.innerHTML = '';
+  levelData[level].baloonsData?.forEach((element) => {
+    const baloonId = element.id;
+    baloonArea.innerHTML += codeOfBaloons[baloonId];
+  });
+};
+
 const levelHandler = (level?: number) => {
   if (level) currentLevel = level;
   else currentLevel += 1;
-  codeArea.textContent = `${levelData[0].id}`;
+  taskTitle.textContent = `${levelData[currentLevel - 1].taskTitle}`;
+  codeArea.innerHTML = levelData[currentLevel - 1].shownCode || '';
+  buildBaloon(currentLevel - 1);
+};
+
+const clearActive = () => {
+  document.querySelectorAll('.level').forEach((element) => {
+    element.classList.remove('active');
+  });
 };
 
 levelList.addEventListener('click', (event) => {
   if ((event.target as HTMLElement).classList.contains('level')) {
     const levelId = Number((event.target as HTMLElement).id);
+    clearActive();
     levelHandler(levelId);
+    (event.target as HTMLElement).classList.add('active');
   }
 });
 
