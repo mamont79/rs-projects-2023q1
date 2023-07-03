@@ -33,13 +33,6 @@ const buildBaloon = (level: number) => {
   });
 };
 
-const levelHandler = (level: number) => {
-  currentLevel = level;
-  taskTitle.textContent = `${levelData[currentLevel].taskTitle}`;
-  codeArea.innerHTML = levelData[currentLevel].shownCode || '';
-  buildBaloon(currentLevel);
-};
-
 const clearActive = () => {
   document.querySelectorAll('.level').forEach((element) => {
     element.classList.remove('active');
@@ -52,14 +45,21 @@ const highlightLevel = (level: number) => {
 };
 highlightLevel(1);
 
+const levelHandler = (level?: number) => {
+  if (level) currentLevel = level;
+  taskTitle.textContent = `${levelData[currentLevel].taskTitle}`;
+  codeArea.innerHTML = levelData[currentLevel].shownCode || '';
+  buildBaloon(currentLevel);
+  highlightLevel(currentLevel + 1);
+  answerInput.value = '';
+};
+
 levelList.addEventListener('click', (event) => {
   if ((event.target as HTMLElement).classList.contains('level')) {
     const levelId = Number((event.target as HTMLElement).id) - 1;
     currentLevel = levelId;
-    // clearActive();
     levelHandler(levelId);
-    highlightLevel(currentLevel + 1);
-    // (event.target as HTMLElement).classList.add('active');
+    // highlightLevel(currentLevel + 1);
   }
 });
 
@@ -70,16 +70,15 @@ const shootBaloon = () => {
   });
 };
 
-const finishLevel = () => {
-  shootBaloon();
+const markLevelComplite = () => {
+  const completeLevelId = `${String(currentLevel + 1)}check`;
+  document.getElementById(completeLevelId)?.classList.add('checked');
 };
 
-// const markLevelComplite = (level: number) => {
-//   const currentTask = document.getElementById(String(level));
-//   currentTask?.forEach((element) => {
-//     element.classList.add('checked');
-//   });
-// };
+const finishLevel = () => {
+  shootBaloon();
+  markLevelComplite();
+};
 
 const showMistake = () => {
   mistakeMessage.classList.add('active');
@@ -87,7 +86,7 @@ const showMistake = () => {
   setTimeout(() => {
     mistakeMessage.classList.remove('active');
     taskTitle.classList.remove('hide');
-  }, 2000);
+  }, 1500);
 };
 
 document.addEventListener('keyup', (event) => {
@@ -95,10 +94,11 @@ document.addEventListener('keyup', (event) => {
     const answer = answerInput.value as string;
     if (levelData[currentLevel].answers?.includes(answer)) {
       finishLevel();
-    } else if (Number(answer) && Number(answer) > 0 && Number(answer) <= 10) {
+      currentLevel += 1;
+      setTimeout(levelHandler, 1500);
+    } else if (Number(answer) > 0 && Number(answer) <= 10) {
       currentLevel = Number(answer) - 1;
       levelHandler(currentLevel);
-      highlightLevel(currentLevel + 1);
     } else {
       showMistake();
     }
