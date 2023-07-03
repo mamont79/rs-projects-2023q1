@@ -33,12 +33,11 @@ const buildBaloon = (level: number) => {
   });
 };
 
-const levelHandler = (level?: number) => {
-  if (level) currentLevel = level;
-  else currentLevel += 1;
-  taskTitle.textContent = `${levelData[currentLevel - 1].taskTitle}`;
-  codeArea.innerHTML = levelData[currentLevel - 1].shownCode || '';
-  buildBaloon(currentLevel - 1);
+const levelHandler = (level: number) => {
+  currentLevel = level;
+  taskTitle.textContent = `${levelData[currentLevel].taskTitle}`;
+  codeArea.innerHTML = levelData[currentLevel].shownCode || '';
+  buildBaloon(currentLevel);
 };
 
 const clearActive = () => {
@@ -47,12 +46,20 @@ const clearActive = () => {
   });
 };
 
+const highlightLevel = (level: number) => {
+  clearActive();
+  document.getElementById(String(level))?.classList.add('active');
+};
+highlightLevel(1);
+
 levelList.addEventListener('click', (event) => {
   if ((event.target as HTMLElement).classList.contains('level')) {
-    const levelId = Number((event.target as HTMLElement).id);
-    clearActive();
+    const levelId = Number((event.target as HTMLElement).id) - 1;
+    currentLevel = levelId;
+    // clearActive();
     levelHandler(levelId);
-    (event.target as HTMLElement).classList.add('active');
+    highlightLevel(currentLevel + 1);
+    // (event.target as HTMLElement).classList.add('active');
   }
 });
 
@@ -88,8 +95,10 @@ document.addEventListener('keyup', (event) => {
     const answer = answerInput.value as string;
     if (levelData[currentLevel].answers?.includes(answer)) {
       finishLevel();
-      currentLevel += 1;
-      // levelHandler(currentLevel);
+    } else if (Number(answer) && Number(answer) > 0 && Number(answer) <= 10) {
+      currentLevel = Number(answer) - 1;
+      levelHandler(currentLevel);
+      highlightLevel(currentLevel + 1);
     } else {
       showMistake();
     }
