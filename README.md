@@ -9,5 +9,9 @@ https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/shelter/pages/main/
 https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/minesweeper/
 
 
-**Migration-to-typescript
+**Migration-to-typescript  
 https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/migration-to-typescript/
+
+
+**Rss-css-selectors  
+https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/rss-css-selectors/
