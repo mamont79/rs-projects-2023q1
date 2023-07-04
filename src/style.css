@@ -228,6 +228,7 @@ body {
 .work-place {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: calc(100% - 30px);
   height: 400px;
   margin: 0 auto;
@@ -263,7 +264,7 @@ body {
 .css-editor {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(50% - 4px);
+  width: calc(50% - 3px);
   height: calc(93% - 4px);
   background-color: rgb(211, 211, 211);
   border: 1px solid azure;

@@ -74,9 +74,22 @@ resetButton.addEventListener('click', () => {
   levelHandler(currentLevel);
 });
 
+let printAnswerIndex = 0;
+
+const printAnswer = () => {
+  const answerToPrint = levelData[currentLevel].answers[0].split('');
+  // console.log(answerToPrint);
+  if (printAnswerIndex < answerToPrint.length) {
+    answerInput.value += answerToPrint[printAnswerIndex];
+    printAnswerIndex += 1;
+    setTimeout(printAnswer, 50);
+  }
+};
+
 helpButton.addEventListener('click', () => {
   helpText.classList.add('shown');
   helpText.textContent = levelData[currentLevel].help || null;
+  printAnswer();
 });
 
 levelList.addEventListener('click', (event) => {
