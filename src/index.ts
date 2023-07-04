@@ -99,7 +99,8 @@ document.addEventListener('keyup', (event) => {
     } else if (Number(answer) > 0 && Number(answer) <= 10) {
       currentLevel = Number(answer) - 1;
       levelHandler(currentLevel);
-    } else {
+      // eslint-disable-next-line no-restricted-globals
+    } else if (isNaN(Number(answer))) {
       showMistake();
     }
   }

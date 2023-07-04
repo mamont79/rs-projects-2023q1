@@ -155,6 +155,13 @@ body {
   transition: all 0.3s;
   animation: baloon-anim 1s infinite alternate;
 }
+.baloon-blue,
+.baloon-red,
+.baloon-green,
+.baloon-big,
+.baloon-small {
+  border: rgb(43, 43, 43) solid 1px;
+}
 .baloon-blue:hover,
 .baloon-red:hover,
 .baloon-green:hover,

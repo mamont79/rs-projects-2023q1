@@ -37,7 +37,7 @@
     ],
     "answers": ["baloon-red", "#baloon-red"],
     "help": "dd",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p><p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 3,
@@ -56,23 +56,149 @@
         "class": "baloon-green baloon"
       },
       {
-        "id": "blue",
-        "animation": false,
-        "titleAttribite": "<baloon-blue />"
+        "id": "greenAct",
+        "animation": true,
+        "titleAttribite": "<baloon-green />",
+        "class": "baloon-green baloon"
       }
     ],
-    "answers": [".baloon-green"],
+    "answers": [".baloon-green", "baloon-green"],
     "help": "dd",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
   },
   {
     "level": 4,
     "shortTitle": ":first-child",
-    "taskTitle": "CSShoot first baloon-green",
+    "taskTitle": "CSShoot first small baloon",
+    "baloonsData": [
+      {
+        "id": "smallAct",
+        "animation": true,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "small",
+        "animation": false,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      }
+    ],
+    "answers": [".baloon-small:first-child", "baloon-small:first-child"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
+  },
+  {
+    "level": 5,
+    "shortTitle": ":last-child",
+    "taskTitle": "CSShoot last big baloon",
     "baloonsData": [
       {
         "id": "blue",
         "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      },
+      {
+        "id": "big",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      },
+      {
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      }
+    ],
+    "answers": [".baloon-big:last-child", "baloon-big:last-child"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
+  },
+  {
+    "level": 6,
+    "shortTitle": "nth-child",
+    "taskTitle": "CSShoot third small baloon",
+    "baloonsData": [
+      {
+        "id": "red",
+        "animation": false,
+        "titleAttribite": "<baloon-red />"
+      },
+      {
+        "id": "small",
+        "animation": false,
+        "titleAttribite": "<ballon-small />"
+      },
+      {
+        "id": "small",
+        "animation": false,
+        "titleAttribite": "<ballon-small />"
+      },
+      {
+        "id": "smallAct",
+        "animation": true,
+        "titleAttribite": "<ballon-small />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<ballon-green />"
+      }
+    ],
+    "answers": [".baloon-small:last-child", "baloon-small:last-child", ".baloon-small:nth-child(3)"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
+  },
+  {
+    "level": 7,
+    "shortTitle": ":first-of-type",
+    "taskTitle": "CSShoot first type of big",
+    "baloonsData": [
+      {
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "big",
+        "animation": false,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      },
+      {
+        "id": "big",
+        "animation": false,
+        "titleAttribite": "<baloon-small />"
+      }
+    ],
+    "answers": [".baloon-big:first-child", "baloon-big:first-child", "baloon-big:first-of-type"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
+  },
+  {
+    "level": 8,
+    "shortTitle": "*",
+    "taskTitle": "CSShoot all ballons",
+    "baloonsData": [
+      {
+        "id": "smallAct",
+        "animation": true,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "blueAct",
+        "animation": true,
         "titleAttribite": "<baloon-blue />"
       },
       {
@@ -81,60 +207,83 @@
         "titleAttribite": "<baloon-green />"
       },
       {
-        "id": "green",
-        "animation": false,
-        "titleAttribite": "<baloon-green />"
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      },
+      {
+        "id": "redAct",
+        "animation": true,
+        "titleAttribite": "<baloon-red />"
       }
     ],
-    "answers": [".baloon-red"],
-    "help": "dd"
-  },
-  {
-    "level": 5,
-    "shortTitle": ":last-child",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
-  },
-  {
-    "level": 6,
-    "shortTitle": "A.classname",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
-  },
-  {
-    "level": 7,
-    "shortTitle": "#id A",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
-  },
-  {
-    "level": 8,
-    "shortTitle": "*",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
+    "answers": ["*"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   },
   {
     "level": 9,
-    "shortTitle": "A *",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
+    "shortTitle": "A, .classname",
+    "taskTitle": "CSShoot all big and blue",
+    "baloonsData": [
+      {
+        "id": "blueAct",
+        "animation": true,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      },
+      {
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      },
+      {
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      }
+    ],
+    "answers": ["baloon-big, .baloon-blue", "baloon-blue, .baloon-big"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
     "level": 10,
     "shortTitle": "A, B",
-    "baloons": ["baloon-green", "baloon-red", "baloon-green"],
-    "animation": [false, true, true],
-    "descript": ["<baloon-green>", "<baloon-red>", "<baloon-green>"],
-    "id": ["green", "red", "green"]
+    "taskTitle": "CSShoot big and small",
+    "baloonsData": [
+      {
+        "id": "smallAct",
+        "animation": true,
+        "titleAttribite": "<baloon-small />"
+      },
+      {
+        "id": "blue",
+        "animation": false,
+        "titleAttribite": "<baloon-blue />"
+      },
+      {
+        "id": "green",
+        "animation": false,
+        "titleAttribite": "<baloon-green />"
+      },
+      {
+        "id": "bigAct",
+        "animation": true,
+        "titleAttribite": "<baloon-big />"
+      },
+      {
+        "id": "red",
+        "animation": false,
+        "titleAttribite": "<baloon-red />"
+      }
+    ],
+    "answers": ["baloon-big, baloon-small", "baloon-small, baloon-big"],
+    "help": "dd",
+    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   }
 ]
