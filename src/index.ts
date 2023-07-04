@@ -105,3 +105,14 @@ document.addEventListener('keyup', (event) => {
     }
   }
 });
+
+const checkMarks = document.querySelectorAll('.checkmark');
+const resetButton = document.querySelector('.reset') as HTMLElement;
+
+resetButton.addEventListener('click', () => {
+  checkMarks.forEach((element) => {
+    element.classList.remove('checked');
+  });
+  currentLevel = 0;
+  levelHandler(currentLevel);
+});
