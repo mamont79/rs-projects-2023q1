@@ -16,7 +16,7 @@
       }
     ],
     "answers": ["baloon-blue", ".baloon-blue"],
-    "help": "dd",
+    "help": "Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.  (div selects all div elements.)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
@@ -36,7 +36,7 @@
       }
     ],
     "answers": ["baloon-red", "#baloon-red"],
-    "help": "dd",
+    "help": "Selects the element with a specific id. You can also combine the ID selector with the type selector.  (#cool selects any element with id='cool')",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p><p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
@@ -63,7 +63,7 @@
       }
     ],
     "answers": [".baloon-green", "baloon-green"],
-    "help": "dd",
+    "help": "The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.   (.neato selects all elements with class='neato')",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
   },
   {
@@ -88,7 +88,7 @@
       }
     ],
     "answers": [".baloon-small:first-child", "baloon-small:first-child"],
-    "help": "dd",
+    "help": "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors. (p:first-child selects all first child p elements.)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
   },
   {
@@ -118,7 +118,7 @@
       }
     ],
     "answers": [".baloon-big:last-child", "baloon-big:last-child"],
-    "help": "dd",
+    "help": "You can use this selector to select an element that is the last child element inside of another element.   (span:last-child selects all last-child span elements.)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
@@ -152,8 +152,13 @@
         "titleAttribite": "<ballon-green />"
       }
     ],
-    "answers": [".baloon-small:last-child", "baloon-small:last-child", ".baloon-small:nth-child(3)"],
-    "help": "dd",
+    "answers": [
+      ".baloon-small:last-child",
+      "baloon-small:last-child",
+      ".baloon-small:nth-child(3)",
+      "baloon-small:nth-child(3)"
+    ],
+    "help": "Selects the nth (Ex: 1st, 3rd, 12th etc.) child element in another element.   (p:nth-child(2) selects the second p)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   },
   {
@@ -183,7 +188,7 @@
       }
     ],
     "answers": [".baloon-big:first-child", "baloon-big:first-child", "baloon-big:first-of-type"],
-    "help": "dd",
+    "help": "Selects the first element of that type within another element.   (span:first-of-type selects the first span in any element.)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
@@ -218,7 +223,7 @@
       }
     ],
     "answers": ["*"],
-    "help": "dd",
+    "help": "You can select all elements with the universal selector!   (p * selects any element inside all p elements)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   },
   {
@@ -248,7 +253,7 @@
       }
     ],
     "answers": ["baloon-big, .baloon-blue", "baloon-blue, .baloon-big"],
-    "help": "dd",
+    "help": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (p, .fun selects all p elements as well as all elements with class='fun')",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
@@ -283,7 +288,7 @@
       }
     ],
     "answers": ["baloon-big, baloon-small", "baloon-small, baloon-big"],
-    "help": "dd",
+    "help": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (a, p, div selects all a, p and div elements)",
     "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   }
 ]
