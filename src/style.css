@@ -263,7 +263,7 @@ body {
 .css-editor {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(50% - 2px);
+  width: calc(50% - 4px);
   height: calc(93% - 4px);
   background-color: rgb(211, 211, 211);
   border: 1px solid azure;
