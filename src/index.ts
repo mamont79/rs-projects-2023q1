@@ -22,6 +22,7 @@ const checkMarks = document.querySelectorAll('.checkmark');
 const resetButton = document.querySelector('.reset') as HTMLElement;
 const helpButton = document.querySelector('.help') as HTMLElement;
 const helpText = document.querySelector('.help-text') as HTMLElement;
+const shootButton = document.querySelector('.enter-button') as HTMLElement;
 
 let currentLevel: number;
 
@@ -83,7 +84,6 @@ levelList.addEventListener('click', (event) => {
     const levelId = Number((event.target as HTMLElement).id) - 1;
     currentLevel = levelId;
     levelHandler(levelId);
-    // highlightLevel(currentLevel + 1);
   }
 });
 
@@ -92,6 +92,13 @@ const shootBaloon = () => {
     element.classList.remove('baloon');
     element.classList.add('shooted');
   });
+};
+
+const missBaloons = () => {
+  baloonArea.classList.add('miss');
+  setTimeout(() => {
+    baloonArea.classList.remove('miss');
+  }, 1000);
 };
 
 const markLevelComplite = () => {
@@ -107,6 +114,7 @@ const finishLevel = () => {
 const showMistake = () => {
   mistakeMessage.classList.add('active');
   taskTitle.classList.add('hide');
+  missBaloons();
   setTimeout(() => {
     mistakeMessage.classList.remove('active');
     taskTitle.classList.remove('hide');
@@ -127,5 +135,20 @@ document.addEventListener('keyup', (event) => {
     } else if (isNaN(Number(answer))) {
       showMistake();
     }
+  }
+});
+
+shootButton.addEventListener('click', () => {
+  const answer = answerInput.value as string;
+  if (levelData[currentLevel].answers?.includes(answer)) {
+    finishLevel();
+    currentLevel += 1;
+    setTimeout(levelHandler, 1500);
+  } else if (Number(answer) > 0 && Number(answer) <= 10) {
+    currentLevel = Number(answer) - 1;
+    levelHandler(currentLevel);
+    // eslint-disable-next-line no-restricted-globals
+  } else if (isNaN(Number(answer))) {
+    showMistake();
   }
 });
