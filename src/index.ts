@@ -27,11 +27,14 @@ let printAnswerIndex = 0;
 let anserWithoutHelp = true;
 
 currentLevel = 0;
-const initApp = () => {
-  currentLevel = 0;
+
+const saveProgress = () => {
+  localStorage.setItem('currentLevel', String(currentLevel));
 };
 
-initApp();
+const getProgress = () => {
+  currentLevel = Number(localStorage.getItem('currentLevel')) || 0;
+};
 
 const buildBaloon = (level: number) => {
   baloonArea.innerHTML = '';
@@ -64,10 +67,17 @@ const levelHandler = (level?: number) => {
   buildBaloon(currentLevel);
   highlightLevel(currentLevel + 1);
   hideHelp();
+  saveProgress();
   answerInput.value = '';
   printAnswerIndex = 0;
   anserWithoutHelp = true;
 };
+
+const initApp = () => {
+  getProgress();
+  levelHandler();
+};
+initApp();
 
 resetButton.addEventListener('click', () => {
   checkMarks.forEach((element) => {
@@ -89,7 +99,7 @@ const printAnswer = () => {
 
 helpButton.addEventListener('click', () => {
   anserWithoutHelp = false;
-  helpText.classList.add('shown');
+  helpText.classList.toggle('shown');
   helpText.textContent = levelData[currentLevel].help || null;
   printAnswer();
 });
