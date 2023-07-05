@@ -1,8 +1,6 @@
 import './style.css';
 import * as levelData from './constants/levels.json';
 import * as baloonsCode from './constants/baloons.json';
-// import { help } from 'yargs';
-// import { ParamData, ITasksData } from './types/index';
 
 interface ICodeOfBaloon {
   [key: string]: string;
@@ -25,12 +23,13 @@ const helpText = document.querySelector('.help-text') as HTMLElement;
 const shootButton = document.querySelector('.enter-button') as HTMLElement;
 
 let currentLevel: number;
+currentLevel = 0;
+let printAnswerIndex = 0;
+// const initApp = () => {
+//   currentLevel = 0;
+// };
 
-const initApp = () => {
-  currentLevel = 0;
-};
-
-initApp();
+// initApp();
 
 const buildBaloon = (level: number) => {
   baloonArea.innerHTML = '';
@@ -50,7 +49,7 @@ const highlightLevel = (level: number) => {
   clearActive();
   document.getElementById(String(level))?.classList.add('active');
 };
-highlightLevel(1);
+highlightLevel(currentLevel + 1);
 
 const hideHelp = () => {
   helpText.classList.remove('shown');
@@ -64,6 +63,7 @@ const levelHandler = (level?: number) => {
   highlightLevel(currentLevel + 1);
   hideHelp();
   answerInput.value = '';
+  printAnswerIndex = 0;
 };
 
 resetButton.addEventListener('click', () => {
@@ -74,15 +74,12 @@ resetButton.addEventListener('click', () => {
   levelHandler(currentLevel);
 });
 
-let printAnswerIndex = 0;
-
 const printAnswer = () => {
   const answerToPrint = levelData[currentLevel].answers[0].split('');
-  // console.log(answerToPrint);
   if (printAnswerIndex < answerToPrint.length) {
     answerInput.value += answerToPrint[printAnswerIndex];
     printAnswerIndex += 1;
-    setTimeout(printAnswer, 50);
+    setTimeout(printAnswer, 100);
   }
 };
 
