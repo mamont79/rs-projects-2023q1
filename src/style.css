@@ -450,6 +450,11 @@ body {
   border: solid 3px #4cbb4a;
   border-width: 0 3px 3px 0;
 }
+.checkmark.cheater {
+  opacity: 1;
+  border: solid 3px #98bbef;
+  border-width: 0 3px 3px 0;
+}
 
 .help-text {
   width: 90%;

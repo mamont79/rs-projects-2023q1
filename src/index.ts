@@ -24,6 +24,7 @@ const shootButton = document.querySelector('.enter-button') as HTMLElement;
 
 let currentLevel: number;
 let printAnswerIndex = 0;
+let anserWithoutHelp = true;
 
 currentLevel = 0;
 const initApp = () => {
@@ -65,11 +66,13 @@ const levelHandler = (level?: number) => {
   hideHelp();
   answerInput.value = '';
   printAnswerIndex = 0;
+  anserWithoutHelp = true;
 };
 
 resetButton.addEventListener('click', () => {
   checkMarks.forEach((element) => {
     element.classList.remove('checked');
+    element.classList.remove('cheater');
   });
   currentLevel = 0;
   levelHandler(currentLevel);
@@ -85,6 +88,7 @@ const printAnswer = () => {
 };
 
 helpButton.addEventListener('click', () => {
+  anserWithoutHelp = false;
   helpText.classList.add('shown');
   helpText.textContent = levelData[currentLevel].help || null;
   printAnswer();
@@ -114,7 +118,8 @@ const missBaloons = () => {
 
 const markLevelComplite = () => {
   const completeLevelId = `${String(currentLevel + 1)}check`;
-  document.getElementById(completeLevelId)?.classList.add('checked');
+  if (anserWithoutHelp === true) document.getElementById(completeLevelId)?.classList.add('checked');
+  else document.getElementById(completeLevelId)?.classList.add('cheater');
 };
 
 const finishLevel = () => {
