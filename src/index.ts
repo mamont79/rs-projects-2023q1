@@ -22,6 +22,7 @@ const helpButton = document.querySelector('.help') as HTMLElement;
 const helpText = document.querySelector('.help-text') as HTMLElement;
 const shootButton = document.querySelector('.enter-button') as HTMLElement;
 
+let progressArray: string[] = ['', '', '', '', '', '', '', '', '', ''];
 let currentLevel: number;
 let printAnswerIndex = 0;
 let anserWithoutHelp = true;
@@ -30,10 +31,23 @@ currentLevel = 0;
 
 const saveProgress = () => {
   localStorage.setItem('currentLevel', String(currentLevel));
+  localStorage.setItem('progressArray', JSON.stringify(progressArray));
 };
 
 const getProgress = () => {
   currentLevel = Number(localStorage.getItem('currentLevel')) || 0;
+  progressArray = JSON.parse(localStorage.getItem('progressArray') as string) || [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ];
 };
 
 const buildBaloon = (level: number) => {
@@ -73,17 +87,12 @@ const levelHandler = (level?: number) => {
   anserWithoutHelp = true;
 };
 
-const initApp = () => {
-  getProgress();
-  levelHandler();
-};
-initApp();
-
 resetButton.addEventListener('click', () => {
   checkMarks.forEach((element) => {
     element.classList.remove('checked');
     element.classList.remove('cheater');
   });
+  progressArray = ['', '', '', '', '', '', '', '', '', ''];
   currentLevel = 0;
   levelHandler(currentLevel);
 });
@@ -128,8 +137,22 @@ const missBaloons = () => {
 
 const markLevelComplite = () => {
   const completeLevelId = `${String(currentLevel + 1)}check`;
-  if (anserWithoutHelp === true) document.getElementById(completeLevelId)?.classList.add('checked');
-  else document.getElementById(completeLevelId)?.classList.add('cheater');
+  if (anserWithoutHelp === true) {
+    document.getElementById(completeLevelId)?.classList.add('checked');
+    progressArray[currentLevel] = 'checked';
+  } else {
+    document.getElementById(completeLevelId)?.classList.add('cheater');
+    progressArray[currentLevel] = 'cheater';
+  }
+};
+
+const markLevelOnLoad = () => {
+  for (let i = 0; i < progressArray.length; i += 1) {
+    if (progressArray[i] !== '') {
+      const levelMarkId = `${String(i + 1)}check`;
+      document.getElementById(levelMarkId)?.classList.add(progressArray[i]);
+    }
+  }
 };
 
 const finishLevel = () => {
@@ -178,3 +201,10 @@ shootButton.addEventListener('click', () => {
     showMistake();
   }
 });
+
+const initApp = () => {
+  getProgress();
+  levelHandler();
+  markLevelOnLoad();
+};
+initApp();
