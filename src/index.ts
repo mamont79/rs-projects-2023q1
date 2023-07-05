@@ -23,13 +23,14 @@ const helpText = document.querySelector('.help-text') as HTMLElement;
 const shootButton = document.querySelector('.enter-button') as HTMLElement;
 
 let currentLevel: number;
-currentLevel = 0;
 let printAnswerIndex = 0;
-// const initApp = () => {
-//   currentLevel = 0;
-// };
 
-// initApp();
+currentLevel = 0;
+const initApp = () => {
+  currentLevel = 0;
+};
+
+initApp();
 
 const buildBaloon = (level: number) => {
   baloonArea.innerHTML = '';
