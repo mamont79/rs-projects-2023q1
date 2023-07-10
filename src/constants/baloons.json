@@ -4,9 +4,9 @@
   "green": "<div class='baloon-green' title='&lt;baloon-green /&gt;'><div class='baloon-blick'></div></div>",
   "big": "<div class='baloon-big' title='&lt;baloon-big /&gt;'><div class='baloon-blick'></div></div>",
   "small": "<div class='baloon-small' title='&lt;baloon-small /&gt;'><div class='baloon-blick'></div></div>",
-  "blueAct": "<div class='baloon-blue baloon' title='&lt;baloon-blue /&gt;'><div class='baloon-blick'></div></div>",
-  "redAct": "<div class='baloon-red baloon' title='&lt;baloon-red /&gt;'><div class='baloon-blick'></div></div>",
-  "greenAct": "<div class='baloon-green baloon' title='&lt;baloon-green /&gt;'><div class='baloon-blick'></div></div>",
-  "bigAct": "<div class='baloon-big baloon' title='&lt;baloon-big /&gt;'><div class='baloon-blick'></div></div>",
-  "smallAct": "<div class='baloon-small baloon' title='&lt;baloon-small /&gt;'><div class='baloon-blick'></div></div>"
+  "blueActive": "<div class='baloon-blue baloon' title='&lt;baloon-blue /&gt;'><div class='baloon-blick'></div></div>",
+  "redActive": "<div class='baloon-red baloon' title='&lt;baloon-red /&gt;'><div class='baloon-blick'></div></div>",
+  "greenActive": "<div class='baloon-green baloon' title='&lt;baloon-green /&gt;'><div class='baloon-blick'></div></div>",
+  "bigActive": "<div class='baloon-big baloon' title='&lt;baloon-big /&gt;'><div class='baloon-blick'></div></div>",
+  "smallActive": "<div class='baloon-small baloon' title='&lt;baloon-small /&gt;'><div class='baloon-blick'></div></div>"
 }

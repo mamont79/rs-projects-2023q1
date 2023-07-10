@@ -5,19 +5,19 @@
     "taskTitle": "CSShoot all baloons",
     "baloonsData": [
       {
-        "id": "blueAct",
+        "id": "blueActive",
         "animation": true,
         "titleAttribite": "<baloon-blue />"
       },
       {
-        "id": "blueAct",
+        "id": "blueActive",
         "animation": true,
         "titleAttribite": "<baloon-blue />"
       }
     ],
     "answers": ["baloon-blue", ".baloon-blue"],
-    "help": "Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.  (div selects all div elements.)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
+    "helpText": "Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.  (div selects all div elements.)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p>    <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue /&gt;</p>    <p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 2,
@@ -30,14 +30,14 @@
         "titleAttribite": "<baloon-blue id='baloon-blue'/>"
       },
       {
-        "id": "redAct",
+        "id": "redActive",
         "animation": true,
         "titleAttribite": "<baloon-red id='baloon-red'/>"
       }
     ],
     "answers": ["baloon-red", "#baloon-red"],
-    "help": "Selects the element with a specific id. You can also combine the ID selector with the type selector.  (#cool selects any element with id='cool')",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p><p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
+    "helpText": "Selects the element with a specific id. You can also combine the ID selector with the type selector.  (#cool selects any element with id='cool')",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p> <p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue id='baloon-blue'/&gt;</p> <p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-red id='baloon-red' /&gt;</p><p class='string-description string-code' id='row-4'>&lt;/div&gt;</p>"
   },
   {
     "level": 3,
@@ -50,21 +50,19 @@
         "titleAttribite": "<baloon-blue />"
       },
       {
-        "id": "greenAct",
+        "id": "greenActive",
         "animation": true,
-        "titleAttribite": "<baloon-green />",
-        "class": "baloon-green baloon"
+        "titleAttribite": "<baloon-green />"
       },
       {
-        "id": "greenAct",
+        "id": "greenActive",
         "animation": true,
-        "titleAttribite": "<baloon-green />",
-        "class": "baloon-green baloon"
+        "titleAttribite": "<baloon-green />"
       }
     ],
     "answers": [".baloon-green", "baloon-green"],
-    "help": "The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.   (.neato selects all elements with class='neato')",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
+    "helpText": "The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.   (.neato selects all elements with class='neato')",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
   },
   {
     "level": 4,
@@ -72,7 +70,7 @@
     "taskTitle": "CSShoot first small baloon",
     "baloonsData": [
       {
-        "id": "smallAct",
+        "id": "smallActive",
         "animation": true,
         "titleAttribite": "<baloon-small />"
       },
@@ -88,8 +86,8 @@
       }
     ],
     "answers": [".baloon-small:first-child", "baloon-small:first-child"],
-    "help": "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors. (p:first-child selects all first child p elements.)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
+    "helpText": "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors. (p:first-child selects all first child p elements.)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&lt;/div&gt;</p>"
   },
   {
     "level": 5,
@@ -112,14 +110,14 @@
         "titleAttribite": "<baloon-big />"
       },
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-big />"
       }
     ],
     "answers": [".baloon-big:last-child", "baloon-big:last-child"],
-    "help": "You can use this selector to select an element that is the last child element inside of another element.   (span:last-child selects all last-child span elements.)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
+    "helpText": "You can use this selector to select an element that is the last child element inside of another element.   (span:last-child selects all last-child span elements.)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
     "level": 6,
@@ -142,7 +140,7 @@
         "titleAttribite": "<ballon-small />"
       },
       {
-        "id": "smallAct",
+        "id": "smallActive",
         "animation": true,
         "titleAttribite": "<ballon-small />"
       },
@@ -158,8 +156,8 @@
       ".baloon-small:nth-child(3)",
       "baloon-small:nth-child(3)"
     ],
-    "help": "Selects the nth (Ex: 1st, 3rd, 12th etc.) child element in another element.   (p:nth-child(2) selects the second p)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
+    "helpText": "Selects the nth (Ex: 1st, 3rd, 12th etc.) child element in another element.   (p:nth-child(2) selects the second p)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   },
   {
     "level": 7,
@@ -167,7 +165,7 @@
     "taskTitle": "CSShoot first type of big",
     "baloonsData": [
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-small />"
       },
@@ -188,8 +186,8 @@
       }
     ],
     "answers": [".baloon-big:first-child", "baloon-big:first-child", "baloon-big:first-of-type"],
-    "help": "Selects the first element of that type within another element.   (span:first-of-type selects the first span in any element.)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
+    "helpText": "Selects the first element of that type within another element.   (span:first-of-type selects the first span in any element.)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
     "level": 8,
@@ -197,34 +195,34 @@
     "taskTitle": "CSShoot all ballons",
     "baloonsData": [
       {
-        "id": "smallAct",
+        "id": "smallActive",
         "animation": true,
         "titleAttribite": "<baloon-small />"
       },
       {
-        "id": "blueAct",
+        "id": "blueActive",
         "animation": true,
         "titleAttribite": "<baloon-blue />"
       },
       {
-        "id": "greenAct",
+        "id": "greenActive",
         "animation": true,
         "titleAttribite": "<baloon-green />"
       },
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-big />"
       },
       {
-        "id": "redAct",
+        "id": "redActive",
         "animation": true,
         "titleAttribite": "<baloon-red />"
       }
     ],
     "answers": ["*"],
-    "help": "You can select all elements with the universal selector!   (p * selects any element inside all p elements)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
+    "helpText": "You can select all elements with the universal selector!   (p * selects any element inside all p elements)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   },
   {
     "level": 9,
@@ -232,7 +230,7 @@
     "taskTitle": "CSShoot all big and blue",
     "baloonsData": [
       {
-        "id": "blueAct",
+        "id": "blueActive",
         "animation": true,
         "titleAttribite": "<baloon-blue />"
       },
@@ -242,19 +240,19 @@
         "titleAttribite": "<baloon-green />"
       },
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-big />"
       },
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-big />"
       }
     ],
     "answers": ["baloon-big, .baloon-blue", "baloon-blue, .baloon-big"],
-    "help": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (p, .fun selects all p elements as well as all elements with class='fun')",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
+    "helpText": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (p, .fun selects all p elements as well as all elements with class='fun')",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big'/&gt;</p><p class='string-description string-code' id='row-6'>&lt;/div&gt;</p>"
   },
   {
     "level": 10,
@@ -262,7 +260,7 @@
     "taskTitle": "CSShoot big and small",
     "baloonsData": [
       {
-        "id": "smallAct",
+        "id": "smallActive",
         "animation": true,
         "titleAttribite": "<baloon-small />"
       },
@@ -277,7 +275,7 @@
         "titleAttribite": "<baloon-green />"
       },
       {
-        "id": "bigAct",
+        "id": "bigActive",
         "animation": true,
         "titleAttribite": "<baloon-big />"
       },
@@ -288,7 +286,7 @@
       }
     ],
     "answers": ["baloon-big, baloon-small", "baloon-small, baloon-big"],
-    "help": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (a, p, div selects all a, p and div elements)",
-    "shownCode": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
+    "helpText": "Thanks to Shatner technology, this selects all A and B elements. You can combine any selectors this way, and you can specify more than two.   (a, p, div selects all a, p and div elements)",
+    "htmlTask": "<p class='string-description string-code' id='row-1'>&lt;div class='baloons'&gt;</p><p class='string-description string-code' id='row-2'>&nbsp;&nbsp; &lt;baloon-small class='baloon-small' /&gt;</p><p class='string-description string-code' id='row-3'>&nbsp;&nbsp; &lt;baloon-blue class='baloon-blue' /&gt;</p><p class='string-description string-code' id='row-4'>&nbsp;&nbsp; &lt;baloon-green class='baloon-green' /&gt;</p><p class='string-description string-code' id='row-5'>&nbsp;&nbsp; &lt;baloon-big class='baloon-big' /&gt;</p><p class='string-description string-code' id='row-6'>&nbsp;&nbsp; &lt;baloon-red class='baloon-red' /&gt;</p><p class='string-description string-code' id='row-7'>&lt;/div&gt;</p>"
   }
 ]

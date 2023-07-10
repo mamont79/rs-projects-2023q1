@@ -13,6 +13,5 @@
     "allowUnreachableCode": false,
     "typeRoots": ["./typings"],
     "resolveJsonModule": true
-    // "moduleResolution": "node"
   }
 }

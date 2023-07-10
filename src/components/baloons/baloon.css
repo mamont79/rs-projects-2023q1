@@ -1,0 +1,146 @@
+.baloons-place {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+  height: 120px;
+}
+.baloon-shooter {
+  width: 100px;
+  height: 120px;
+  transform: scale(-1, 1);
+  background-image: url('../../assets/archer-man.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+.baloons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
+  height: 90px;
+  background-image: url('../../assets/cloud.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+.baloons.miss {
+  animation: miss-anim 0.1s infinite alternate;
+}
+@keyframes miss-anim {
+  from {
+    width: 70%;
+    height: 90px;
+  }
+  to {
+    width: 67%;
+    height: 85px;
+  }
+}
+.cloud {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.baloon-blue {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(119, 161, 252);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+  transition: all 0.3s;
+}
+.baloon-red {
+  width: 70px;
+  height: 70px;
+  background: rgb(240, 83, 83);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+  transition: all 0.3s;
+}
+.baloon-green {
+  width: 70px;
+  height: 70px;
+  background: rgb(62, 247, 59);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+  transition: all 0.3s;
+}
+.baloon-small {
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+  background: rgb(254, 164, 47);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+  transition: all 0.3s;
+}
+.baloon-big {
+  width: 90px;
+  height: 90px;
+  margin-top: -10px;
+  background: rgb(110, 254, 168);
+  border-radius: 100% 100% 0% 100%;
+  transform: rotateZ(45deg);
+  transition: all 0.3s;
+}
+.baloon {
+  cursor: crosshair;
+  transition: all 0.3s;
+  animation: baloon-anim 1s infinite alternate;
+}
+.baloon-blue,
+.baloon-red,
+.baloon-green,
+.baloon-big,
+.baloon-small {
+  border: rgb(43, 43, 43) solid 1px;
+}
+.baloon-blue:hover,
+.baloon-red:hover,
+.baloon-green:hover,
+.baloon-big:hover,
+.baloon-small:hover {
+  box-shadow: 0px 0px 15px rgb(114, 72, 95);
+}
+.baloon-blue.shooted,
+.baloon-red.shooted,
+.baloon-green.shooted,
+.baloon-big.shooted,
+.baloon-small.shooted {
+  animation-name: baloon-shoot;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes baloon-anim {
+  from {
+    transform: scale(1) rotateZ(45deg);
+  }
+  to {
+    transform: scale(1.1) rotateZ(45deg);
+  }
+}
+@keyframes baloon-shoot {
+  from {
+    transform: rotateZ(45deg);
+  }
+  to {
+    width: 7px;
+    height: 2px;
+    transform: rotateZ(-45deg);
+  }
+}
+.baloon-blick {
+  position: relative;
+  width: 25%;
+  height: 20%;
+  top: 14%;
+  right: -36%;
+  background-color: azure;
+  opacity: 0.8;
+  border-radius: 100% 100% 50% 50%;
+}

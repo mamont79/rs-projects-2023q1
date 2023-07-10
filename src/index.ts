@@ -1,26 +1,22 @@
 import './style.css';
 import * as levelData from './constants/levels.json';
-import * as baloonsCode from './constants/baloons.json';
+import { shootBaloon, missBaloons, buildBaloon } from './components/baloons/baloon';
+import { highlightLevel, hideHelpText } from './components/navigation/navLevels';
 
-interface ICodeOfBaloon {
-  [key: string]: string;
-}
-
-const codeOfBaloons: ICodeOfBaloon = baloonsCode;
 const answerInput = document.getElementById('check-answer') as HTMLInputElement;
 const mistakeMessage = document.querySelector('.show-mistake') as HTMLElement;
 
 const taskTitle = document.querySelector('.task-title') as HTMLElement;
 const codeArea = document.querySelector('.code-area') as HTMLElement;
-const baloonArea = document.querySelector('.baloons') as HTMLElement;
+const helpText = document.querySelector('.help-text') as HTMLElement;
 
 const levelList = document.querySelector('.level-list') as HTMLElement;
 
 const checkMarks = document.querySelectorAll('.checkmark');
-const resetButton = document.querySelector('.reset') as HTMLElement;
-const helpButton = document.querySelector('.help') as HTMLElement;
-const helpText = document.querySelector('.help-text') as HTMLElement;
-const shootButton = document.querySelector('.enter-button') as HTMLElement;
+const resetButton = document.querySelector('.reset-button') as HTMLElement;
+const helpButton = document.querySelector('.help-button') as HTMLElement;
+
+const shootButton = document.querySelector('.submit-answer-button') as HTMLElement;
 
 let progressArray: string[] = ['', '', '', '', '', '', '', '', '', ''];
 let currentLevel: number;
@@ -50,37 +46,13 @@ const getProgress = () => {
   ];
 };
 
-const buildBaloon = (level: number) => {
-  baloonArea.innerHTML = '';
-  levelData[level].baloonsData?.forEach((element) => {
-    const baloonId = element.id;
-    baloonArea.innerHTML += codeOfBaloons[baloonId];
-  });
-};
-
-const clearActive = () => {
-  document.querySelectorAll('.level').forEach((element) => {
-    element.classList.remove('active');
-  });
-};
-
-const highlightLevel = (level: number) => {
-  clearActive();
-  document.getElementById(String(level))?.classList.add('active');
-};
-highlightLevel(currentLevel + 1);
-
-const hideHelp = () => {
-  helpText.classList.remove('shown');
-};
-
 const levelHandler = (level?: number) => {
   if (level) currentLevel = level;
   taskTitle.textContent = `${levelData[currentLevel].taskTitle}`;
-  codeArea.innerHTML = levelData[currentLevel].shownCode || '';
+  codeArea.innerHTML = levelData[currentLevel].htmlTask || '';
   buildBaloon(currentLevel);
   highlightLevel(currentLevel + 1);
-  hideHelp();
+  hideHelpText();
   saveProgress();
   answerInput.value = '';
   printAnswerIndex = 0;
@@ -109,7 +81,7 @@ const printAnswer = () => {
 helpButton.addEventListener('click', () => {
   anserWithoutHelp = false;
   helpText.classList.toggle('shown');
-  helpText.textContent = levelData[currentLevel].help || null;
+  helpText.textContent = levelData[currentLevel].helpText || null;
   printAnswer();
 });
 
@@ -121,22 +93,8 @@ levelList.addEventListener('click', (event) => {
   }
 });
 
-const shootBaloon = () => {
-  document.querySelectorAll('.baloon').forEach((element) => {
-    element.classList.remove('baloon');
-    element.classList.add('shooted');
-  });
-};
-
-const missBaloons = () => {
-  baloonArea.classList.add('miss');
-  setTimeout(() => {
-    baloonArea.classList.remove('miss');
-  }, 1000);
-};
-
 const markLevelComplite = () => {
-  const completeLevelId = `${String(currentLevel + 1)}check`;
+  const completeLevelId = `${currentLevel + 1}check`;
   if (anserWithoutHelp === true) {
     document.getElementById(completeLevelId)?.classList.add('checked');
     progressArray[currentLevel] = 'checked';
@@ -155,7 +113,7 @@ const markLevelOnLoad = () => {
   }
 };
 
-const finishLevel = () => {
+const completeLevel = () => {
   shootBaloon();
   markLevelComplite();
 };
@@ -170,41 +128,30 @@ const showMistake = () => {
   }, 1500);
 };
 
-document.addEventListener('keyup', (event) => {
-  if (event.code === 'Enter') {
-    const answer = answerInput.value as string;
-    if (levelData[currentLevel].answers?.includes(answer)) {
-      finishLevel();
-      currentLevel += 1;
-      setTimeout(levelHandler, 1500);
-    } else if (Number(answer) > 0 && Number(answer) <= 10) {
-      currentLevel = Number(answer) - 1;
-      levelHandler(currentLevel);
-      // eslint-disable-next-line no-restricted-globals
-    } else if (isNaN(Number(answer))) {
-      showMistake();
-    }
-  }
-});
-
-shootButton.addEventListener('click', () => {
+const checkInputAnswer = () => {
   const answer = answerInput.value as string;
   if (levelData[currentLevel].answers?.includes(answer)) {
-    finishLevel();
+    completeLevel();
     currentLevel += 1;
     setTimeout(levelHandler, 1500);
   } else if (Number(answer) > 0 && Number(answer) <= 10) {
     currentLevel = Number(answer) - 1;
     levelHandler(currentLevel);
-    // eslint-disable-next-line no-restricted-globals
-  } else if (isNaN(Number(answer))) {
+  } else if (!Number(answer)) {
     showMistake();
   }
+};
+
+document.addEventListener('keyup', (event) => {
+  if (event.code === 'Enter') checkInputAnswer();
 });
+
+shootButton.addEventListener('click', checkInputAnswer);
 
 const initApp = () => {
   getProgress();
   levelHandler();
   markLevelOnLoad();
 };
+highlightLevel(currentLevel + 1);
 initApp();
