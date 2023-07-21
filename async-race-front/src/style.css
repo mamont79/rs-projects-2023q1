@@ -1,0 +1,250 @@
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+  background-color: rgb(15, 15, 15);
+  color: azure;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+a {
+  background-color: transparent;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/* header styles start */
+
+.navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 300px;
+  margin: 30px auto;
+}
+
+.navigation-button {
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.navigation-button:hover {
+  background: rgb(255, 236, 63);
+}
+
+#garage-button {
+  padding: 0 20px 0 50px;
+  border-radius: 100% 0 0 100%;
+}
+
+#winners-button {
+  padding: 0 50px 0 20px;
+  border-radius: 0 100% 100% 0;
+}
+
+/* header styles end */
+
+/* Winners section styles start */
+
+.winners {
+  width: 100%;
+}
+.winners.hidden {
+  display: none;
+}
+
+.winners-title,
+.winners-page {
+  margin-left: 50px;
+}
+
+.winners-title {
+  font-size: 1.5em;
+}
+
+.winners-page {
+  font-size: 1.3em;
+}
+
+.winners-table {
+  margin: 20px 50px;
+}
+
+.winners-table {
+  font-size: 1.2em;
+}
+
+th,
+td {
+  padding: 5px 15px;
+}
+
+.winner-pagination {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.winner-prev,
+.winner-next {
+  width: 100px;
+  height: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.winner-prev:hover,
+.winner-next:hover {
+  background-color: rgb(255, 238, 86);
+}
+
+/* Winners section styles end */
+
+/* Garage section styles start */
+
+.garage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.garage.hiddden {
+  display: none;
+}
+
+.menu-box {
+  margin-left: 40px;
+}
+
+.new-car-menu,
+.change-car-menu {
+  height: 30px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+
+.new-car-name,
+.change-car-name {
+  margin: 0;
+  height: 23px;
+  width: 201px;
+  margin-right: 5px;
+}
+
+.create-color,
+.change-color {
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.create-button,
+.update-button {
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.create-button:hover,
+.update-button:hover {
+  background: turquoise;
+}
+
+.race-button,
+.reset-button {
+  width: 100px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.generate-button {
+  height: 30px;
+  width: 138px;
+}
+
+.garage-title,
+.garage-page {
+  margin-left: 50px;
+}
+
+.garage-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.garage-page {
+  font-size: 1.3em;
+  margin-top: 0;
+}
+
+.garage-pagination {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.garage-prev,
+.garage-next {
+  width: 100px;
+  height: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.garage-prev:hover,
+.garage-next:hover {
+  background-color: rgb(255, 238, 86);
+}
+
+.race-field {
+  width: 100%;
+}
+
+.race-line {
+  height: 60px;
+  width: 100%;
+  border-bottom: dashed 4px white;
+}
+
+.finish-flag {
+  position: fixed;
+  right: 15%;
+  height: 55px;
+  width: 55px;
+}
+
+/* Garage section styles end */
