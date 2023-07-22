@@ -40,6 +40,7 @@ button,
 select {
   /* 1 */
   text-transform: none;
+  transition: all 0.5s;
 }
 
 /* header styles start */
@@ -235,16 +236,70 @@ td {
 }
 
 .race-line {
-  height: 60px;
+  position: relative;
+  height: 70px;
   width: 100%;
   border-bottom: dashed 4px white;
 }
 
+.car-controls {
+  width: fit-content;
+}
+
+.remove-button,
+.select-button {
+  height: 20px;
+
+  margin-left: 5px;
+}
+.car-name {
+  margin-left: 15px;
+}
+
+.current-line {
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(100% - 150px);
+  margin-top: 5px;
+  justify-content: space-around;
+}
+
+.current-start,
+.current-reset {
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: solid 1px yellow;
+  border-radius: 5px;
+}
+.current-car {
+  position: relative;
+  height: 40px;
+  width: calc(100% - 60px);
+}
+
+.car-image {
+  position: absolute;
+  animation-name: car-move;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes car-move {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
 .finish-flag {
-  position: fixed;
+  position: absolute;
   right: 15%;
-  height: 55px;
-  width: 55px;
+  bottom: 5px;
+  height: 45px;
+  width: 45px;
 }
 
 /* Garage section styles end */
