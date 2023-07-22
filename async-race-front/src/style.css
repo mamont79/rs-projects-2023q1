@@ -134,12 +134,10 @@ td {
 /* Garage section styles start */
 
 .garage {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 
-.garage.hiddden {
+.garage.hidden {
   display: none;
 }
 
@@ -272,7 +270,15 @@ td {
   text-align: center;
   border: solid 1px yellow;
   border-radius: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
+
+.current-start:hover,
+.current-reset:hover {
+  background: darkblue;
+}
+
 .current-car {
   position: relative;
   height: 40px;
@@ -281,18 +287,19 @@ td {
 
 .car-image {
   position: absolute;
-  animation-name: car-move;
+  bottom: -5px;
+  /* animation-name: car-move;
   animation-duration: 5s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 }
-@keyframes car-move {
+/* @keyframes car-move {
   from {
     left: 0;
   }
   to {
     left: 100%;
   }
-}
+} */
 
 .finish-flag {
   position: absolute;
@@ -300,6 +307,9 @@ td {
   bottom: 5px;
   height: 45px;
   width: 45px;
+  background-image: url('../src/assets/finish-flag.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /* Garage section styles end */

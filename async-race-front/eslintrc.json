@@ -10,7 +10,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest",
+    "ecmaVersion": 2017,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
@@ -22,6 +22,8 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "import/extensions": [
       "error",
       "ignorePackages",
