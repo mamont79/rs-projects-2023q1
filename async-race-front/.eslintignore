@@ -1,2 +1,4 @@
+
 .eslintrc.js
+.eslintrc.json
 *.config.js

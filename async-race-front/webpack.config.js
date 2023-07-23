@@ -45,6 +45,8 @@ const baseConfig = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
+      title: 'Async race',
+      favicon: './src/assets/finish-flag.png',
     }),
     new CleanWebpackPlugin(),
   ],

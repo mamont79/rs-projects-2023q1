@@ -1,7 +1,7 @@
 {
-  "name": "async-race",
+  "name": "rss-css-selector",
   "version": "1.0.0",
-  "description": "async race api",
+  "description": "",
   "main": "webpack.base.config.js",
   "scripts": {
     "start": "webpack serve --open --config ./webpack.config.js --env mode=dev",
@@ -12,6 +12,7 @@
     "type": "git",
     "url": ""
   },
+  "keywords": [],
   "author": "Pavel Dalhou",
   "license": "ISC",
   "homepage": "",
