@@ -56,6 +56,8 @@ const buildNewCar = async () => {
     lineBuilder(carColor, carName, carId);
   }
   changeAmountInfo();
+  (document.querySelector('.new-car-name') as HTMLInputElement).value = '';
+  (document.querySelector('.create-color') as HTMLInputElement).value = '#aa00aa';
 };
 
 const generateHundredCars = async () => {

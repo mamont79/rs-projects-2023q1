@@ -8,8 +8,8 @@ const lineBuilder = (color: string, carName: string, id?: string) => {
                   class="car-image" id="${id}"></svg>`;
   const lineHtml = `<div class="race-line" id="${id}-line">
                      <div class="car-controls">
-                       <button class="select-button">Select</button>
-                       <button class="remove-button"  id="${id}-remove">Remove</button>
+                       <button class="select-button" id="${id}-select" carname = "${carName}" carcolor = "${color}">Select</button>
+                       <button class="remove-button" id="${id}-remove">Remove</button>
                        <span class="car-name" id="${id}-name">Tesla</span>
                      </div>
                      <div class="current-controls">
