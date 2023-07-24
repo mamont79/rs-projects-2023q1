@@ -3,7 +3,8 @@ import { baseUrl, path } from '../../constants/serverUrl';
 
 let pageNumber = 1;
 
-const changePageInfo = () => {
+const changePageInfo = (page?: number) => {
+  if (page) pageNumber = page;
   (document.querySelector('.garage-page-number') as HTMLElement).textContent = String(pageNumber);
 };
 
@@ -33,4 +34,4 @@ const prevGaragePage = () => {
   }
 };
 
-export { nextGaragePage, prevGaragePage };
+export { nextGaragePage, prevGaragePage, changePageInfo };

@@ -9,7 +9,7 @@ const lineBuilder = (color: string, carName: string, id?: string) => {
   const lineHtml = `<div class="race-line" id="${id}-line">
                      <div class="car-controls">
                        <button class="select-button">Select</button>
-                       <button class="remove-button">Remove</button>
+                       <button class="remove-button"  id="${id}-remove">Remove</button>
                        <span class="car-name" id="${id}-name">Tesla</span>
                      </div>
                      <div class="current-controls">
