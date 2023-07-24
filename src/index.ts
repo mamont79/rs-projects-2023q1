@@ -18,6 +18,7 @@ const generateCarsButton = document.querySelector('.generate-button') as HTMLEle
 const raceField = document.querySelector('.race-field') as HTMLElement;
 
 let updateCarId: number;
+let updateStatus = false;
 
 buildGarage();
 // getWinners();
@@ -27,6 +28,7 @@ raceField.addEventListener('click', (event) => {
     const removeCarId = (event.target as HTMLElement).id.split('-')[0];
     deleteCar(Number(removeCarId));
   } else if ((event.target as HTMLElement).classList.contains('select-button')) {
+    updateStatus = true;
     updateCarId = Number((event.target as HTMLElement).id.split('-')[0]);
     const carName = (event.target as HTMLElement).getAttribute('carname') as string;
     const carColor = (event.target as HTMLElement).getAttribute('carcolor') as string;
@@ -43,5 +45,8 @@ garagePrevButton.addEventListener('click', prevGaragePage);
 garageNextButton.addEventListener('click', nextGaragePage);
 generateCarsButton.addEventListener('click', generateHundredCars);
 updateButton.addEventListener('click', () => {
-  updateCurrentCar(updateCarId);
+  if (updateStatus === true) {
+    updateCurrentCar(updateCarId);
+    updateStatus = false;
+  }
 });
