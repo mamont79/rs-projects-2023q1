@@ -1,5 +1,6 @@
 import { lineBuilder } from './buildCarLine';
 import { baseUrl, path } from '../../constants/serverUrl';
+import { generateName, generateColor } from './generator';
 
 const changeAmountInfo = async () => {
   const responce = await fetch(`${baseUrl}${path.garage}`);
@@ -20,7 +21,6 @@ const buildGarage = async (pageNumber = 1) => {
     lineBuilder(carColor, carName, carId);
   }
   changeAmountInfo();
-  console.log(cars.length);
 };
 
 type ICarData = {
@@ -49,15 +49,32 @@ const buildNewCar = async () => {
     name: carName,
     color: carColor,
   });
-  const carId = newCar.id;
-  console.log(newCar.id);
 
+  const carId = newCar.id;
   const carsOnPage = document.querySelectorAll('.race-line').length;
-  console.log(carsOnPage);
   if (carsOnPage < 7) {
     lineBuilder(carColor, carName, carId);
   }
   changeAmountInfo();
 };
 
-export { buildGarage, buildNewCar };
+const generateHundredCars = async () => {
+  for (let i = 0; i < 100; i++) {
+    const carName = generateName();
+    const carColor = generateColor();
+
+    const newCar = await buildCar({
+      name: carName,
+      color: carColor,
+    });
+
+    const carId = newCar.id;
+    const carsOnPage = document.querySelectorAll('.race-line').length;
+    if (carsOnPage < 7) {
+      lineBuilder(carColor, carName, carId);
+    }
+  }
+  changeAmountInfo();
+};
+
+export { buildGarage, buildNewCar, generateHundredCars };

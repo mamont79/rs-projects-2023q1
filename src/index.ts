@@ -1,6 +1,6 @@
 import './style.css';
 import { goToGarage, goToWinners } from './components/changeView/change-view';
-import { buildGarage, buildNewCar } from './components/garageCars/garageBuilder';
+import { buildGarage, buildNewCar, generateHundredCars } from './components/garageCars/garageBuilder';
 import { nextGaragePage, prevGaragePage } from './components/garageCars/garageCarsPages';
 // import { getWinners } from './components/winnersCars/winnersCars';
 
@@ -9,6 +9,7 @@ const winnersButton = document.getElementById('winners-button') as HTMLElement;
 const createButton = document.querySelector('.create-button') as HTMLElement;
 const garagePrevButton = document.querySelector('.garage-prev') as HTMLElement;
 const garageNextButton = document.querySelector('.garage-next') as HTMLElement;
+const generateCarsButton = document.querySelector('.generate-button') as HTMLElement;
 
 buildGarage();
 // getWinners();
@@ -18,3 +19,4 @@ winnersButton.addEventListener('click', goToWinners);
 createButton.addEventListener('click', buildNewCar);
 garagePrevButton.addEventListener('click', prevGaragePage);
 garageNextButton.addEventListener('click', nextGaragePage);
+generateCarsButton.addEventListener('click', generateHundredCars);
