@@ -2,10 +2,10 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-  entry: './src/index.ts',
+  entry: './src/index',
   mode: 'development',
   devtool: 'inline-source-map',
   module: {
@@ -41,7 +41,7 @@ const baseConfig = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    new ESLintPlugin({ extensions: 'ts' }),
+    // new ESLintPlugin({ extensions: 'ts' }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
