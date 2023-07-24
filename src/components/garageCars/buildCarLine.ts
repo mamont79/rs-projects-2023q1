@@ -1,9 +1,7 @@
 // import { lineHtml } from '../../constants/lineHTML';
 import { carSvgCode } from '../../constants/svg-code';
 
-const raceField = document.querySelector('.race-field') as HTMLElement;
-
-const lineBuilder = (color: string, carName: string, id: string) => {
+const lineBuilder = (color: string, carName: string, id?: string) => {
   const svgImg = `<svg fill="${color}"
                   xmlns="http://www.w3.org/2000/svg"
                   width="90" height="40" viewBox="0 0 1280 640"
@@ -25,7 +23,7 @@ const lineBuilder = (color: string, carName: string, id: string) => {
                      <div class="finish-flag"></div>
                    </div>
                    `;
-  raceField.innerHTML += lineHtml;
+  (document.querySelector('.race-field') as HTMLElement).innerHTML += lineHtml;
   (document.getElementById(`${id}-name`) as HTMLElement).textContent = carName;
   (document.getElementById(`${id}-car`) as HTMLElement).innerHTML = svgImg;
   (document.getElementById(`${id}`) as HTMLElement).innerHTML = carSvgCode;
