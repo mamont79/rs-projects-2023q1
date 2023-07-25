@@ -6,7 +6,7 @@ import { deleteCar } from './components/garageCars/removeCar';
 import { updateCurrentCar } from './components/garageCars/updateCar';
 import { getWinners } from './components/winnersCars/winnersCars';
 
-// alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
+alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
 const garageButton = document.getElementById('garage-button') as HTMLElement;
 const winnersButton = document.getElementById('winners-button') as HTMLElement;
