@@ -4,7 +4,7 @@ import { buildGarage, buildNewCar, generateHundredCars } from './components/gara
 import { nextGaragePage, prevGaragePage } from './components/garageCars/garageCarsPages';
 import { deleteCar } from './components/garageCars/removeCar';
 import { updateCurrentCar } from './components/garageCars/updateCar';
-// import { getWinners } from './components/winnersCars/winnersCars';
+import { getWinners } from './components/winnersCars/winnersCars';
 
 // alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
@@ -21,7 +21,7 @@ let updateCarId: number;
 let updateStatus = false;
 
 buildGarage();
-// getWinners();
+getWinners();
 
 raceField.addEventListener('click', (event) => {
   if ((event.target as HTMLElement).classList.contains('remove-button')) {

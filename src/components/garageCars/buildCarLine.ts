@@ -1,4 +1,3 @@
-// import { lineHtml } from '../../constants/lineHTML';
 import { carSvgCode } from '../../constants/svg-code';
 
 const lineBuilder = (color: string, carName: string, id?: string) => {
