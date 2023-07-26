@@ -4,21 +4,24 @@ const moveCurrentCar = (id: string) => {
   const lineWidth = currentLine.offsetWidth;
   const carWidth = 60;
 
-  let carAcceleration = (Math.floor(Math.random() * 30) + 10) / 100;
+  let carAcceleration = (Math.floor(Math.random() * 28) + 12) / 1000;
 
   let speed = 0;
   let position = 0;
+  let moves = 0;
 
   (document.getElementById(`${id}-start`) as HTMLButtonElement).disabled = true;
   let moveCar = setInterval(() => {
     speed += carAcceleration;
     position += speed;
-    if (position >= lineWidth - carWidth) {
+    if (position >= 100) {
       clearInterval(moveCar);
+      console.log(moves / 25);
     } else {
-      currentCar.style.left = `${position}px`;
+      moves += 1;
+      currentCar.style.left = `${position}%`;
     }
-  }, 25);
+  }, 40);
 };
 
 const carToStart = (id: string) => {

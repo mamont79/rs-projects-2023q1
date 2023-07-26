@@ -258,7 +258,7 @@ td {
 .current-line {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(100% - 40px);
+  width: calc(100% - 100px);
   margin-top: 5px;
   justify-content: space-around;
 }
@@ -292,22 +292,11 @@ td {
 .car-image {
   position: absolute;
   bottom: -5px;
-  /* animation-name: car-move;
-  animation-duration: 5s;
-  animation-fill-mode: forwards; */
 }
-/* @keyframes car-move {
-  from {
-    left: 0;
-  }
-  to {
-    left: 100%;
-  }
-} */
 
 .finish-flag {
   position: absolute;
-  right: 15%;
+  right: 110px;
   bottom: 5px;
   height: 45px;
   width: 45px;
