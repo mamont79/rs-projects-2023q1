@@ -8,7 +8,7 @@ import { getWinners } from './components/winnersCars/winnersCars';
 
 import { moveCurrentCar, carToStart, allCarsToStart, allCarMove } from './components/carAnimation/carAnimation';
 
-// alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
+alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
 const garageButton = document.getElementById('garage-button') as HTMLElement;
 const winnersButton = document.getElementById('winners-button') as HTMLElement;
