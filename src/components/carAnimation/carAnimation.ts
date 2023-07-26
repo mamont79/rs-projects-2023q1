@@ -14,6 +14,8 @@ const moveCurrentCar = (id: string) => {
   let moves = 0;
 
   (document.getElementById(`${id}-start`) as HTMLButtonElement).disabled = true;
+  (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = true;
+  (document.getElementById(`${id}-remove`) as HTMLButtonElement).disabled = true;
 
   if (loseChance < 0.8) {
     let moveCar = setInterval(() => {
@@ -28,6 +30,7 @@ const moveCurrentCar = (id: string) => {
         console.log(winnersInfo);
         winResultMessage.textContent = `${winnersInfo[1]} win in ${winnersInfo[0]} seconds`;
         (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = false;
+        (document.getElementById(`${id}-remove`) as HTMLButtonElement).disabled = false;
       } else {
         moves += 1;
         currentCar.style.left = `${position}%`;

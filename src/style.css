@@ -199,17 +199,19 @@ td {
 .garage-title,
 .garage-page {
   margin-left: 50px;
+  margin-bottom: 5px;
 }
 
 .garage-title {
   font-size: 1.5em;
-  margin-bottom: 10px;
 }
 
 .garage-win-result {
   padding: 5px 15px;
   opacity: 0;
-  margin-left: 300px;
+  width: 300px;
+  text-align: center;
+  margin: 5px auto;
   border: dashed 4px yellow;
   text-transform: uppercase;
   transition: all 0.5s;
