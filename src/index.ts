@@ -6,7 +6,7 @@ import { deleteCar } from './components/garageCars/removeCar';
 import { updateCurrentCar } from './components/garageCars/updateCar';
 import { getWinners } from './components/winnersCars/winnersCars';
 
-import { moveCurrentCar, carToStart } from './components/carAnimation/carAnimation';
+import { moveCurrentCar, carToStart, allCarsToStart, allCarMove } from './components/carAnimation/carAnimation';
 
 // alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
@@ -14,6 +14,8 @@ const garageButton = document.getElementById('garage-button') as HTMLElement;
 const winnersButton = document.getElementById('winners-button') as HTMLElement;
 const createButton = document.querySelector('.create-button') as HTMLElement;
 const updateButton = document.querySelector('.update-button') as HTMLElement;
+const resetButton = document.querySelector('.reset-button') as HTMLElement;
+const raceButton = document.querySelector('.race-button') as HTMLElement;
 const garagePrevButton = document.querySelector('.garage-prev') as HTMLElement;
 const garageNextButton = document.querySelector('.garage-next') as HTMLElement;
 const generateCarsButton = document.querySelector('.generate-button') as HTMLElement;
@@ -52,6 +54,8 @@ createButton.addEventListener('click', buildNewCar);
 garagePrevButton.addEventListener('click', prevGaragePage);
 garageNextButton.addEventListener('click', nextGaragePage);
 generateCarsButton.addEventListener('click', generateHundredCars);
+resetButton.addEventListener('click', allCarsToStart);
+raceButton.addEventListener('click', allCarMove);
 updateButton.addEventListener('click', () => {
   if (updateStatus === true) {
     updateCurrentCar(updateCarId);

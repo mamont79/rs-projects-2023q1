@@ -30,4 +30,20 @@ const carToStart = (id: string) => {
   (document.getElementById(`${id}-start`) as HTMLButtonElement).disabled = false;
 };
 
-export { moveCurrentCar, carToStart };
+const allCarsToStart = () => {
+  const allCurrentCars = document.querySelectorAll('.car-image');
+  allCurrentCars.forEach((element) => {
+    const carId = element.id;
+    carToStart(carId);
+  });
+};
+
+const allCarMove = () => {
+  const allCurrentCars = document.querySelectorAll('.car-image');
+  allCurrentCars.forEach((element) => {
+    const carId = element.id;
+    moveCurrentCar(carId);
+  });
+};
+
+export { moveCurrentCar, carToStart, allCarsToStart, allCarMove };
