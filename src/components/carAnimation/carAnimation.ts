@@ -43,6 +43,7 @@ const moveCurrentCar = (id: string) => {
 
         clearInterval(moveCar);
         (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = false;
+        (document.getElementById(`${id}-remove`) as HTMLButtonElement).disabled = false;
       } else if (position >= loserDistanse / 2) {
         position += speed;
         speed -= carAcceleration;
