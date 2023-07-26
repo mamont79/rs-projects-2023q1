@@ -258,17 +258,20 @@ td {
 .current-line {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(100% - 150px);
+  width: calc(100% - 40px);
   margin-top: 5px;
   justify-content: space-around;
 }
 
 .current-start,
 .current-reset {
-  width: 20px;
+  width: 25px;
   height: 30px;
-  line-height: 30px;
+  margin-top: 5px;
+  line-height: 20px;
   text-align: center;
+  background: none;
+  color: aliceblue;
   border: solid 1px yellow;
   border-radius: 5px;
   transition: all 0.5s;

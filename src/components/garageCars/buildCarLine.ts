@@ -13,10 +13,9 @@ const lineBuilder = (color: string, carName: string, id?: string) => {
                      </div>
                      <div class="current-controls">
                        <div class="current-line">
-                         <div class="current-start">A</div>
-                         <div class="current-reset">B</div>
-                         <div class="current-car" id="${id}-car">
-                         </div>
+                         <button class="current-start" id="${id}-start">A</button>
+                         <button class="current-reset" id="${id}-reset">B</button>
+                         <div class="current-car" id="${id}-car"></div>
                        </div>
                      </div>
                      <div class="finish-flag"></div>

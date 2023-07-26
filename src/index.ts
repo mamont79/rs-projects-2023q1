@@ -6,7 +6,9 @@ import { deleteCar } from './components/garageCars/removeCar';
 import { updateCurrentCar } from './components/garageCars/updateCar';
 import { getWinners } from './components/winnersCars/winnersCars';
 
-alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
+import { moveCurrentCar, carToStart } from './components/carAnimation/carAnimation';
+
+// alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
 const garageButton = document.getElementById('garage-button') as HTMLElement;
 const winnersButton = document.getElementById('winners-button') as HTMLElement;
@@ -35,6 +37,12 @@ raceField.addEventListener('click', (event) => {
     (document.querySelector('.change-car-name') as HTMLInputElement).value = carName;
     (document.querySelector('.change-color') as HTMLInputElement).value = carColor;
     console.log(updateCarId, carName, carColor);
+  } else if ((event.target as HTMLElement).classList.contains('current-start')) {
+    const moveCarId = (event.target as HTMLElement).id.split('-')[0];
+    moveCurrentCar(moveCarId);
+  } else if ((event.target as HTMLElement).classList.contains('current-reset')) {
+    const moveCarId = (event.target as HTMLElement).id.split('-')[0];
+    carToStart(moveCarId);
   }
 });
 
