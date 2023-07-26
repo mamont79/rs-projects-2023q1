@@ -20,7 +20,7 @@ const getWinners = async () => {
     const carTime = datawinners[i].time;
 
     const winnerIndex = dataCars.findIndex((obj: IObjectCar) => obj.id === carId);
-    console.log(winnerIndex);
+    console.log(datawinners[i]);
 
     const carName = dataCars[winnerIndex].name;
     const carColor = dataCars[winnerIndex].color;

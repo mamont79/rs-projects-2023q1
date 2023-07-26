@@ -4,8 +4,6 @@ const winResultMessage = document.querySelector('.garage-win-result') as HTMLEle
 const moveCurrentCar = (id: string) => {
   const currentLine = document.getElementById(`${id}-car`) as HTMLElement;
   const currentCar = document.getElementById(`${id}`) as HTMLElement;
-  const lineWidth = currentLine.offsetWidth;
-  const carWidth = 60;
 
   let carAcceleration = (Math.floor(Math.random() * 28) + 12) / 1000;
   let loseChance = Math.random();
@@ -26,8 +24,9 @@ const moveCurrentCar = (id: string) => {
         clearInterval(moveCar);
         winnersInfo.push(String(moves / 25));
         winnersInfo.push((document.getElementById(`${id}-name`) as HTMLElement).textContent);
+        winnersInfo.push(id);
         console.log(winnersInfo);
-        winResultMessage.textContent = `${winnersInfo[1]} win in ${winnersInfo[0]}`;
+        winResultMessage.textContent = `${winnersInfo[1]} win in ${winnersInfo[0]} seconds`;
         (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = false;
       } else {
         moves += 1;

@@ -6,7 +6,7 @@ const winnerRowBuilder = (id: string, color: string, name: string, wins: string,
                   width="60" height="25" viewBox="0 0 1280 640"
                   class="winner-image" id="${id}-image"></svg>`;
   const winnerRowHtml = `
-    <tr>
+    <tr class="winner-row">
       <td class="winner-position" id="${id}-position">${id}</td>
       <td class="winner-car" id="${id}-winner">
         
