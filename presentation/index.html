@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Machine Learning</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Machine Learning</h1>
+          <p>Presentation prepared by Pavel Dalhou</p>
+        </section>
+        <section>
+					<section>
+						<h2>What	is	Machine	Learning?</h2>
+							<p>“Learning	is	any	process	by	which	a	system	improves	
+									performance	from	experience.”  (Herbert	Simon)
+							</p>
+					</section>
+          <section>
+						<h2>Definition	by	Tom	Mitchell	(1998):</h2>
+						<p>Machine	Learning	is	the	study	of	algorithms	that:</p>
+						<ul>
+							
+							<li>improve	their	performance	P</li>
+							<li>at	some	task	T</li>
+							<li>with	experience	E</li>
+						</ul>
+						<p>A	well-defined	learning	task	is	given	by	<P,	T,	E>.</p>
+					</section>
+				</section>
+        <section>
+					<section>
+						<h3>Traditional	Programming</h3>
+						<img src="./assets/traditional-programming.png" alt="scheme of traditional programming">
+					</section>
+					<section>
+						<h3>Machine	Learning</h3>
+						<img src="./assets/machine-learning.png" alt="scheme of machine learning">
+					</section>
+				</section>
+        <section>
+					<section>
+						<h3>When	Do	We	Use	Machine	Learning?</h3>
+						<p>ML	is	used when:</p>
+						<ul>
+							<li>Human	expertise does not	exist (navigating on	Mars)</li>
+							<li>Humans can't explain their expertise (speech recognition)</li>
+							<li>Models must be	customized (personalized medicine)</li>
+							<li>Models are based on	huge amounts of	data	(genomics)</li>
+						</ul>
+						<img src="./assets/exaples.png" alt="examples of ML using">
+					</section>
+					<section>
+						<h3>
+							A	classic	example	of	a	task	that	requires	machine	learning:	
+							It	is	very	hard	to	say	what	makes	a	2
+						</h3>
+						<img src="./assets/exaple-reading-number.png" alt="example of reading numbers">
+					</section>
+					<section>
+						<h3>
+							Some	more	examples	of	tasks	that	are	best	
+							solved	by	using	a	learning	algorithm
+						</h3>
+					</section>
+					<section>
+						<p>
+							Recognizing	patterns:
+						</p>
+						<ul>
+							<li>Facial	identities	or	facial	expressions</li>
+							<li>Handwritten	or	spoken	words</li>
+							<li>Medical	images</li>
+						</ul>
+					</section>
+					<section>
+						<p>
+							Generating	patterns:
+						</p>
+						<ul>
+							<li>Generating	images</li>
+							<li>Generating motion	sequences</li>
+						</ul>
+						<img src="./assets/generation-image.png" alt="generation image example">
+					</section>
+					<section>
+						<p>
+							Recognizing	anomalies:
+						</p>
+						<ul>
+							<li>Unusual	credit	card	transactions</li>
+							<li>Unusual	patterns	of	sensor	readings	in	a	nuclear	power	plant</li>
+						</ul>
+					</section>
+					<section>
+						<p>
+							Prediction:
+						</p>
+						<ul>
+							<li>Future	stock	prices	or	currency	exchange	rates</li>
+							<li>Prediction of weather</li>
+							<li>Prediction of population</li>
+						</ul>
+						<img src="./assets/rates.png" width="400" alt="rates prediction">
+					</section>
+				</section>
+        <section>
+					<h2>Sample	Applications</h2>
+					<ul>
+						<li>Web	search</li>
+						<li>Finance</li>
+						<li>Space	exploration</li>
+						<li>Robotics</li>
+						<li>Computational	biology</li>
+						<li>Information	extraction</li>
+						<li>E-commerce</li>
+						<li>Social	networks</li>
+						<li>Debugging	software</li>
+						<li>...hm... many other</li>
+					</ul>
+				</section>
+        <section>
+					<section>
+						<h3>Deep	Belief	Net	on	Face	Images</h3>
+						<img src="./assets/levels-of-dl.png" alt="levels of deep learning">
+					</section>
+					<section>
+						<h3>Learning	of	Object	Parts</h3>
+						<img src="./assets/levels-of-dl-2.png" alt="levels of deep learning part two">
+					</section>
+					<section>
+						<p>
+							Trained	on	4	classes	(cars,	faces,	
+							animals,	chairs).	
+						</p>
+						<p>
+							Second	layer:	Shared-features	
+							and	object-specific	features.
+						</p>
+						<p>
+							Third	layer:	More	specific	
+							features.	
+						</p>
+					</section>
+					<section>
+						<h3>Scene	Labeling	via	Deep	Learning</h3>
+						<img src="./assets/road labeling.png" alt="road labeling">
+					</section>
+				</section>
+        <section>
+					<section>
+						<h2>Types	of	Learning</h2>
+					</section>
+          <section>
+						<h3>Supervised	Learning:	Regression</h3>
+						<ul>
+							<li>Given	(x1,	y1),	(x2,	y2),	...,	(xn,	yn)</li>
+							<li>
+								Learn	a	function	f(x)	to	predict	y given	x
+								– y is	real-valued	==	regression
+							</li>
+						</ul>
+						<img src="./assets/sea-ice-prediction.png" alt="sea ice prediction">
+					</section>
+          <section>
+						<h3>Supervised	Learning:	Classification</h3>
+						<ul>
+							<li>Given	(x1,	y1),	(x2,	y2),	...,	(xn,	yn)</li>
+							<li>
+								Learn	a	function	f(x)	to	predict	y given	x
+								– y is	categorical	==	Classification
+							</li>
+						</ul>
+						<img src="./assets/breast-cancer.png" alt="breast cancer">
+					</section>
+          <section>
+						<h3>Unsupervised	Learning</h3>
+						<ul>
+							<li>Given	x1,	x2,	...,	xn (without	labels)</li>
+							<li>
+								Output	hidden	structure	behind	the	x's
+								– E.g.,	clustering
+							</li>
+						</ul>
+						<img src="./assets/clustering.png" alt="clustering">
+					</section>
+          <section>
+						<h3>Unsupervised	Learning</h3>
+						<div style="display:flex;  flex-direction: row; justify-content: space-around;">
+							<img src="./assets/astranomic-data-analisis.png" style="width: 30%;" alt="astranomic-data-analisis">
+							<img src="./assets/social-clustering.png"style="width: 30%;" alt="social-clustering">
+							<img src="./assets/market-segmentation.png"style="width: 30%;" alt="market-segmentation">
+						</div>
+					</section>
+          <section>
+						<h3>Reinforcement	Learning</h3>
+						<p>
+							Given a	sequence of	states and actions with
+							(delayed)	rewards,	output a	policy
+						</p>
+						<p>
+							Policy is	a	mapping from states - actions that
+							tells you what to do	in	a	given state
+						</p>
+						<p>It could be: Credit assignment problem, Game	playing, Robot	in	a	maze...
+						</p>
+						</section>
+        </section>
+        <section>
+					<section>ML	in	a	Nutshell</section>
+					<section>
+						Tens	of	thousands	of	machine	learning	
+						algorithms (Hundreds	new	every	year)
+					</section>
+					<section>
+						<h3>Every	ML	algorithm	has	three	components:</h3>
+						<ul>
+							<li>Representation</li>
+							<li>Optimization</li>
+							<li>Evaluation</li>
+						</ul>
+					</section>
+				</section>
+        <section>
+					<section>Various	Function	Representations</section>
+					<section>
+						<h3>Numerical	functions</h3>
+						<ul>
+							<li>Linear	regression</li>
+							<li>Neural	networks</li>
+							<li>Support	vector	machines</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Symbolic	functions</h3>
+						<ul>
+							<li>Decision	trees</li>
+							<li>Rules	in	propositional	logic</li>
+							<li>Rules	in	first-order	predicate	logic</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Instance-based	functions</h3>
+						<ul>
+							<li>Nearest-neighbor</li>
+							<li>Case-based</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Probabilistic	Graphical	Models</h3>
+						<ul>
+							<li>Naïve	Bayes</li>
+							<li>Bayesian	networks</li>
+							<li>Hidden-Markov	Models (HMMs)</li>
+							<li>Probabilistic	Context	Free	Grammars (PCFGs)</li>
+							<li>Markov	networks</li>
+						</ul>
+					</section>
+				</section>
+        <section>
+					<section>
+						Various	Search/Optimization	
+						Algorithms
+					</section>
+					<section>
+						<ul>
+							<li>Gradient	descent (Perceptron, Backpropagation)</li>
+							<li>Dynamic	Programming (HMM	Learning, PCFG	Learning)</li>
+							<li>Divide	and	Conquer (Decision	tree	induction, Rule	learning)</li>
+							<li>Evolutionary	Computation (Genetic	Algorithms	(GAs), Genetic	Programming	(GP), Neuro-evolution)</li>
+						</ul>
+					</section>
+				</section>
+        <section>
+					<h2>Evaluation</h2>
+					<ul>
+						<li>Accuracy</li>
+						<li>Precision	and	recall</li>
+						<li>Squared	error</li>
+						<li>Likelihood</li>
+						<li>Posterior	probability</li>
+						<li>Cost	/	Utility</li>
+						<li>Entropy</li>
+						<li>etc.</li>
+					</ul>
+				</section>
+        <section>
+					<h3>ML	in	Practice</h3>
+					<div style="display: flex; flex-wrap: no-wrap;">
+					  <div>
+							<img src="./assets/loop.png" alt="loop image" style="height: 100%;">
+						</div>
+						<div>
+							<ul>
+								<li>Understand	domain,	prior	knowledge,	and	goals</li>
+								<li>Data	integration,	selection,	cleaning,	pre-processing,	etc.</li>
+								<li>Learn	models</li>
+								<li>Interpret	results</li>
+								<li>Consolidate	and	deploy	discovered	knowledge</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+        <section>
+					<h2>thank you for your attention</h2>
+				</section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
