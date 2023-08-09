@@ -4,6 +4,7 @@ const winResultMessage = document.querySelector('.garage-win-result') as HTMLEle
 const moveCurrentCar = (id: string) => {
   const currentLine = document.getElementById(`${id}-car`) as HTMLElement;
   const currentCar = document.getElementById(`${id}`) as HTMLElement;
+  const roadWidth = 100;
 
   let carAcceleration = (Math.floor(Math.random() * 28) + 12) / 1000;
   let loseChance = Math.random();
@@ -21,13 +22,12 @@ const moveCurrentCar = (id: string) => {
     let moveCar = setInterval(() => {
       speed += carAcceleration;
       position += speed;
-      if (position >= 100) {
+      if (position >= roadWidth) {
         (document.querySelector('.reset-button') as HTMLButtonElement).disabled = false;
         clearInterval(moveCar);
         winnersInfo.push(String(moves / 25));
         winnersInfo.push((document.getElementById(`${id}-name`) as HTMLElement).textContent);
         winnersInfo.push(id);
-        console.log(winnersInfo);
         winResultMessage.textContent = `${winnersInfo[1]} win in ${winnersInfo[0]} seconds`;
         (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = false;
         (document.getElementById(`${id}-remove`) as HTMLButtonElement).disabled = false;
@@ -40,7 +40,6 @@ const moveCurrentCar = (id: string) => {
     let moveCar = setInterval(() => {
       if (position >= loserDistanse) {
         (document.querySelector('.reset-button') as HTMLButtonElement).disabled = false;
-
         clearInterval(moveCar);
         (document.getElementById(`${id}-reset`) as HTMLButtonElement).disabled = false;
         (document.getElementById(`${id}-remove`) as HTMLButtonElement).disabled = false;

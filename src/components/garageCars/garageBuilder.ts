@@ -1,6 +1,10 @@
 import { lineBuilder } from './buildCarLine';
 import { baseUrl, path } from '../../constants/serverUrl';
 import { generateName, generateColor } from './generator';
+import { ICarData } from './types';
+
+const carsPerPage = 7;
+const carsForGenerate = 100;
 
 const changeAmountInfo = async () => {
   const responce = await fetch(`${baseUrl}${path.garage}`);
@@ -11,8 +15,8 @@ const changeAmountInfo = async () => {
 const buildGarage = async (pageNumber = 1) => {
   const responce = await fetch(`${baseUrl}${path.garage}`);
   const cars = await responce.json();
-  const firstCarNumber = (pageNumber - 1) * 7;
-  const lastCarNumber = firstCarNumber + 7 < cars.length ? firstCarNumber + 7 : cars.length;
+  const firstCarNumber = (pageNumber - 1) * carsPerPage;
+  const lastCarNumber = firstCarNumber + carsPerPage < cars.length ? firstCarNumber + carsPerPage : cars.length;
   (document.querySelector('.race-field') as HTMLElement).innerHTML = '';
   for (let i = firstCarNumber; i < lastCarNumber; i++) {
     const carName = cars[i].name;
@@ -21,11 +25,6 @@ const buildGarage = async (pageNumber = 1) => {
     lineBuilder(carColor, carName, carId);
   }
   changeAmountInfo();
-};
-
-type ICarData = {
-  name: string;
-  color: string;
 };
 
 const buildCar = async (body: ICarData) => {
@@ -52,7 +51,7 @@ const buildNewCar = async () => {
 
   const carId = newCar.id;
   const carsOnPage = document.querySelectorAll('.race-line').length;
-  if (carsOnPage < 7) {
+  if (carsOnPage < carsPerPage) {
     lineBuilder(carColor, carName, carId);
   }
   changeAmountInfo();
@@ -60,8 +59,8 @@ const buildNewCar = async () => {
   (document.querySelector('.create-color') as HTMLInputElement).value = '#aa00aa';
 };
 
-const generateHundredCars = async () => {
-  for (let i = 0; i < 100; i++) {
+const generateCars = async () => {
+  for (let i = 0; i < carsForGenerate; i++) {
     const carName = generateName();
     const carColor = generateColor();
 
@@ -72,11 +71,11 @@ const generateHundredCars = async () => {
 
     const carId = newCar.id;
     const carsOnPage = document.querySelectorAll('.race-line').length;
-    if (carsOnPage < 7) {
+    if (carsOnPage < carsPerPage) {
       lineBuilder(carColor, carName, carId);
     }
   }
   changeAmountInfo();
 };
 
-export { buildGarage, buildNewCar, generateHundredCars };
+export { buildGarage, buildNewCar, generateCars };

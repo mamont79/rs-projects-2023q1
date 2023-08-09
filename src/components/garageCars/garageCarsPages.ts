@@ -21,7 +21,6 @@ const nextGaragePage = async () => {
     pageNumber += 1;
     buildGarage(pageNumber);
     changePageInfo();
-    console.log(pageNumber);
   }
 };
 
@@ -30,7 +29,6 @@ const prevGaragePage = () => {
     pageNumber -= 1;
     buildGarage(pageNumber);
     changePageInfo();
-    console.log(pageNumber);
   }
 };
 

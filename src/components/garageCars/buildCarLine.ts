@@ -5,7 +5,7 @@ const lineBuilder = (color: string, carName: string, id?: string) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="90" height="40" viewBox="0 0 1280 640"
                   class="car-image" id="${id}"></svg>`;
-  const lineHtml = `<div class="race-line" id="${id}-line">
+  const roadLineHtml = `<div class="race-line" id="${id}-line">
                      <div class="car-controls">
                        <button class="select-button" id="${id}-select" carname = "${carName}" carcolor = "${color}">Select</button>
                        <button class="remove-button" id="${id}-remove">Remove</button>
@@ -21,7 +21,7 @@ const lineBuilder = (color: string, carName: string, id?: string) => {
                      <div class="finish-flag"></div>
                    </div>
                    `;
-  (document.querySelector('.race-field') as HTMLElement).innerHTML += lineHtml;
+  (document.querySelector('.race-field') as HTMLElement).innerHTML += roadLineHtml;
   (document.getElementById(`${id}-name`) as HTMLElement).textContent = carName;
   (document.getElementById(`${id}-car`) as HTMLElement).innerHTML = svgImg;
   (document.getElementById(`${id}`) as HTMLElement).innerHTML = carSvgCode;

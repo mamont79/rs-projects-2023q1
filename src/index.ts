@@ -1,14 +1,12 @@
 import './style.css';
 import { goToGarage, goToWinners } from './components/changeView/change-view';
-import { buildGarage, buildNewCar, generateHundredCars } from './components/garageCars/garageBuilder';
+import { buildGarage, buildNewCar, generateCars } from './components/garageCars/garageBuilder';
 import { nextGaragePage, prevGaragePage } from './components/garageCars/garageCarsPages';
 import { deleteCar } from './components/garageCars/removeCar';
 import { updateCurrentCar } from './components/garageCars/updateCar';
 import { getWinners } from './components/winnersCars/winnersCars';
 
 import { moveCurrentCar, carToStart, allCarsToStart, allCarMove } from './components/carAnimation/carAnimation';
-
-// alert('Проверьте пожалуйсто в среду или четверг. постараюсь ещё немного доделать');
 
 const garageButton = document.getElementById('garage-button') as HTMLElement;
 const winnersButton = document.getElementById('winners-button') as HTMLElement;
@@ -53,7 +51,7 @@ winnersButton.addEventListener('click', goToWinners);
 createButton.addEventListener('click', buildNewCar);
 garagePrevButton.addEventListener('click', prevGaragePage);
 garageNextButton.addEventListener('click', nextGaragePage);
-generateCarsButton.addEventListener('click', generateHundredCars);
+generateCarsButton.addEventListener('click', generateCars);
 resetButton.addEventListener('click', allCarsToStart);
 raceButton.addEventListener('click', allCarMove);
 updateButton.addEventListener('click', () => {
