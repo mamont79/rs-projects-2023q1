@@ -1,21 +1,18 @@
 # mamont79-JSFE2023Q1
-Private repository for @mamont79  
-  
-**Shelter**  
-https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/shelter/pages/main/  
-  
-  
-**Minesweeper**  
-https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/minesweeper/
 
+Private repository for @mamont79
+
+**Shelter**  
+https://mamont79.github.io/rs-projects-2023q1/shelter/pages/main/
+
+**Minesweeper**  
+https://mamont79.github.io/rs-projects-2023q1/minesweeper/
 
 **Migration-to-typescript**  
-https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/migration-to-typescript/
+https://mamont79.github.io/rs-projects-2023q1/migration-to-typescript/
 
+**Rss-css-selectors**
+https://mamont79.github.io/rs-projects-2023q1/rss-css-selectors/
 
-**Rss-css-selectors** 
-https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/rss-css-selectors/
- 
- 
 **Async-Race**  
-https://rolling-scopes-school.github.io/mamont79-JSFE2023Q1/async-race/
+https://mamont79.github.io/rs-projects-2023q1/async-race/
