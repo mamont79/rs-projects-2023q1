@@ -2,7 +2,6 @@
   color: aliceblue;
   background: rgb(63, 62, 62);
   width: 30%;
-  height: 100vh;
 }
 
 .level-title {
@@ -24,7 +23,7 @@
   height: 35px;
   line-height: 35px;
   vertical-align: middle;
-  font-size: 1.3em;
+  font-size: 1.2em;
   transition: all 0.4s;
   cursor: pointer;
 }
@@ -63,9 +62,9 @@
 .help-text {
   width: 90%;
   height: 150px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   padding: 5px 10px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0;
   color: rgb(211, 211, 211);
   transition: all 0.7s;
@@ -87,7 +86,7 @@
 
 .help-button,
 .reset-button {
-  margin: 10px auto;
+  margin: auto auto 10px;
   text-align: center;
   background: rgb(50, 50, 50);
   color: whitesmoke;

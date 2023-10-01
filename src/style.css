@@ -47,10 +47,11 @@ body {
 .wrapper {
   display: flex;
   flex-wrap: nowrap;
+  height: 100vh;
 }
 .left-side {
   width: 70%;
-  height: 100vh;
+  height: 95%;
 }
 .show-mistake {
   display: none;
@@ -97,14 +98,14 @@ body {
 .work-place-pc {
   margin: 0 auto;
   width: 90%;
-  height: 480px;
+  /* height: 480px; */
 }
 .work-place {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: calc(100% - 30px);
-  height: 400px;
+  /* height: 400px; */
   margin: 0 auto;
   border: 13px solid rgb(56, 56, 56);
 }
