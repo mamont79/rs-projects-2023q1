@@ -1,6 +1,10 @@
-# mamont79-JSFE2023Q1
+# Hi, this is my portfolio
+Here you can find my projects:
 
-Private repository for @mamont79
+**Pokemons**  
+deploy: [link](pokemon-by-mamont.netlify.app)  
+![image](https://github.com/user-attachments/assets/6ab69c73-cccc-4ab8-80bb-d7c997b0e145)  
+It' build with: React, typescript, react routing, redux toolkit, styled-components, axios  
 
 **Shelter**  
 https://mamont79.github.io/rs-projects-2023q1/shelter/pages/main/
