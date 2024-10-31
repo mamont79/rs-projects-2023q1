@@ -14,8 +14,10 @@ It' build with: React, typescript, react routing, react-forms,  redux toolkit, Y
 ## Shelter  
 https://mamont79.github.io/rs-projects-2023q1/shelter/pages/main/
 
-##  Minesweeper    
-https://mamont79.github.io/rs-projects-2023q1/minesweeper/
+##  Minesweeper  
+deploy: [link](https://mamont79.github.io/rs-projects-2023q1/minesweeper/)
+![image](https://github.com/user-attachments/assets/453a31ab-2e5b-4349-9288-36ffb60ca9cb)
+It's build just HTML, CSS, JavaScript  
 
 ## Migration-to-typescript  
 https://mamont79.github.io/rs-projects-2023q1/migration-to-typescript/
