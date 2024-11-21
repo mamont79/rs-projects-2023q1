@@ -2,7 +2,7 @@
 Here you can find my projects:
 
 ## Pokemons  
-deploy: [link](pokemon-by-mamont.netlify.app)  
+deploy: [link](https://pokemon-by-mamont.netlify.app)  
 repo: [code](https://github.com/mamont79/rss-react-2024/tree/app-state-management)  
 ![image](https://github.com/user-attachments/assets/6ab69c73-cccc-4ab8-80bb-d7c997b0e145)  
 It' built with: React, typescript, react routing, redux toolkit, styled-components, axios  
